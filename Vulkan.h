@@ -2,4 +2,4 @@
 
 #include "resource.h"
 
-// 
+// Merhaba Dünya
