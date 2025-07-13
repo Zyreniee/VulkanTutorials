@@ -1,0 +1,7 @@
+﻿  first_app.cpp
+  lve_window.cpp
+  main.cpp
+  Vulkan.cpp
+  Kod Üretiliyor...
+LINK : warning LNK4098: defaultlib 'MSVCRT' diğer kitaplıkların kullanımı ile çakışıyor; /NODEFAULTLIB:library kullanın
+  Vulkan.vcxproj -> C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\x64\Debug\Vulkan.exe
