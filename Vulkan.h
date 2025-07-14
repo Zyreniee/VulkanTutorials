@@ -37,17 +37,11 @@ int main() {
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan Triangle", nullptr, nullptr);
-    cout << "HEAR ME OUT ROCKSTAR" << GLFW_KEY_END;
     VkInstance instance;
     {
         VkApplicationInfo appInfo{};
         appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-        
-        appInfo.pApplicationName = "Triangle";
-        appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
-        appInfo.pEngineName = "No Engine";
-        appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
-        appInfo.apiVersion = VK_API_VERSION_1_0;
+      
 
         VkInstanceCreateInfo createInfo{};
         createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
@@ -129,11 +123,11 @@ int main() {
     vkDestroyShaderModule(device, fragModule, nullptr);
     vkDestroyShaderModule(device, vertModule, nullptr);
     vkDestroyDevice(device, nullptr);
-    cout << "a";
     vkDestroySurfaceKHR(instance, surface, nullptr);
     vkDestroyInstance(instance, nullptr);
     glfwDestroyWindow(window);
     glfwTerminate();
-
+    glfwInit();
+    glfwTerminate();
     return 0;
 }
