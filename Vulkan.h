@@ -1,6 +1,6 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
-
+#include <iostream>
 #include <iostream>
 #include <stdexcept>
 #include <cstdlib>
@@ -128,6 +128,7 @@ int main() {
     vkDestroyShaderModule(device, fragModule, nullptr);
     vkDestroyShaderModule(device, vertModule, nullptr);
     vkDestroyDevice(device, nullptr);
+    cout << "a";
     vkDestroySurfaceKHR(instance, surface, nullptr);
     vkDestroyInstance(instance, nullptr);
     glfwDestroyWindow(window);
