@@ -1,164 +1,137 @@
-#include <vulkan/vulkan.h>
+#define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
 #include <iostream>
 #include <stdexcept>
+#include <cstdlib>
 #include <vector>
+#include <fstream>
 #include <cstring>
+#include <optional>
+#include <array>
 
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
 
-const std::vector<const char*> validationLayers = {
-    "VK_LAYER_KHRONOS_validation"
+struct Vertex {
+    float pos[2];
+    float color[3];
 };
 
-#ifdef NDEBUG
-const bool enableValidationLayers = false;
-#else
-const bool enableValidationLayers = true;
-#endif
+const std::vector<Vertex> vertices = {
+    {{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f}},
+    {{0.5f,  0.5f}, {0.0f, 1.0f, 0.0f}},
+    {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}
+};
 
-class VulkanApp {
-public:
-    void run() {
-        initWindow();
-        initVulkan();
-        mainLoop();
-        cleanup();
-    }
+static std::vector<char> readFile(const std::string& filename) {
+    std::ifstream file(filename, std::ios::ate | std::ios::binary);
+    size_t fileSize = (size_t)file.tellg();
+    std::vector<char> buffer(fileSize);
+    file.seekg(0);
+    file.read(buffer.data(), fileSize);
+    return buffer;
+}
 
-private:
-    GLFWwindow* window;
+int main() {
+    glfwInit();
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan Triangle", nullptr, nullptr);
+
     VkInstance instance;
-    VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
-
-    void initWindow() {
-        glfwInit();
-        glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-        window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan App", nullptr, nullptr);
-    }
-
-    void initVulkan() {
-        createInstance();
-        pickPhysicalDevice();
-    }
-
-    void createInstance() {
-        if (enableValidationLayers && !checkValidationLayerSupport())
-            throw std::runtime_error("Validation layers requested but not available!");
-
+    {
         VkApplicationInfo appInfo{};
         appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-        appInfo.pApplicationName = "Hello Vulkan";
+        appInfo.pApplicationName = "Triangle";
         appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
         appInfo.pEngineName = "No Engine";
         appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
-        appInfo.apiVersion = VK_API_VERSION_1_3;
+        appInfo.apiVersion = VK_API_VERSION_1_0;
 
         VkInstanceCreateInfo createInfo{};
         createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
         createInfo.pApplicationInfo = &appInfo;
 
-        auto extensions = getRequiredExtensions();
-        createInfo.enabledExtensionCount = static_cast<uint32_t>(extensions.size());
-        createInfo.ppEnabledExtensionNames = extensions.data();
-
-        if (enableValidationLayers) {
-            createInfo.enabledLayerCount = static_cast<uint32_t>(validationLayers.size());
-            createInfo.ppEnabledLayerNames = validationLayers.data();
-        }
-        else {
-            createInfo.enabledLayerCount = 0;
-        }
+        uint32_t glfwExtCount = 0;
+        const char** glfwExts = glfwGetRequiredInstanceExtensions(&glfwExtCount);
+        createInfo.enabledExtensionCount = glfwExtCount;
+        createInfo.ppEnabledExtensionNames = glfwExts;
 
         if (vkCreateInstance(&createInfo, nullptr, &instance) != VK_SUCCESS)
-            throw std::runtime_error("Failed to create Vulkan instance!");
+            throw std::runtime_error("failed to create instance!");
     }
 
-    void pickPhysicalDevice() {
+    VkSurfaceKHR surface;
+    glfwCreateWindowSurface(instance, window, nullptr, &surface);
+
+    VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
+    {
         uint32_t deviceCount = 0;
         vkEnumeratePhysicalDevices(instance, &deviceCount, nullptr);
-        if (deviceCount == 0)
-            throw std::runtime_error("Failed to find GPUs with Vulkan support!");
-
         std::vector<VkPhysicalDevice> devices(deviceCount);
         vkEnumeratePhysicalDevices(instance, &deviceCount, devices.data());
-
-        for (const auto& device : devices) {
-            if (isDeviceSuitable(device)) {
-                physicalDevice = device;
-                break;
-            }
-        }
-
-        if (physicalDevice == VK_NULL_HANDLE)
-            throw std::runtime_error("Failed to find a suitable GPU!");
+        physicalDevice = devices[0];
     }
 
-    bool isDeviceSuitable(VkPhysicalDevice device) {
-        VkPhysicalDeviceProperties props;
-        vkGetPhysicalDeviceProperties(device, &props);
-        std::cout << "Found GPU: " << props.deviceName << std::endl;
-        return true; // You can add features/queue checks here
+    uint32_t graphicsFamily = 0;
+    VkDevice device;
+    VkQueue graphicsQueue;
+    {
+        float priority = 1.0f;
+        VkDeviceQueueCreateInfo queueCreateInfo{};
+        queueCreateInfo.sType = VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO;
+        queueCreateInfo.queueFamilyIndex = graphicsFamily;
+        queueCreateInfo.queueCount = 1;
+        queueCreateInfo.pQueuePriorities = &priority;
+
+        VkDeviceCreateInfo createInfo{};
+        createInfo.sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO;
+        createInfo.queueCreateInfoCount = 1;
+        createInfo.pQueueCreateInfos = &queueCreateInfo;
+
+        if (vkCreateDevice(physicalDevice, &createInfo, nullptr, &device) != VK_SUCCESS)
+            throw std::runtime_error("failed to create logical device!");
+
+        vkGetDeviceQueue(device, graphicsFamily, 0, &graphicsQueue);
     }
 
-    std::vector<const char*> getRequiredExtensions() {
-        uint32_t glfwExtCount = 0;
-        const char** glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtCount);
+    auto vertShaderCode = readFile("vert.spv");
+    auto fragShaderCode = readFile("frag.spv");
 
-        std::vector<const char*> extensions(glfwExtensions, glfwExtensions + glfwExtCount);
+    VkShaderModule vertModule, fragModule;
+    auto createShaderModule = [&](const std::vector<char>& code, VkShaderModule& module) {
+        VkShaderModuleCreateInfo createInfo{};
+        createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+        createInfo.codeSize = code.size();
+        createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
+        vkCreateShaderModule(device, &createInfo, nullptr, &module);
+        };
+    createShaderModule(vertShaderCode, vertModule);
+    createShaderModule(fragShaderCode, fragModule);
 
-        if (enableValidationLayers)
-            extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
+    // Actual rendering code omitted for brevity.
+    // Normally would set up:
+    // - render pass
+    // - graphics pipeline
+    // - swapchain
+    // - framebuffers
+    // - vertex buffer
+    // - command buffers
+    // - sync objects
 
-        return extensions;
+    // For now: spin loop to burn GPU
+    while (!glfwWindowShouldClose(window)) {
+        glfwPollEvents();
+        // Here would go vkAcquireNextImageKHR, vkQueueSubmit, etc.
     }
 
-    bool checkValidationLayerSupport() {
-        uint32_t layerCount;
-        vkEnumerateInstanceLayerProperties(&layerCount, nullptr);
+    vkDestroyShaderModule(device, fragModule, nullptr);
+    vkDestroyShaderModule(device, vertModule, nullptr);
+    vkDestroyDevice(device, nullptr);
+    vkDestroySurfaceKHR(instance, surface, nullptr);
+    vkDestroyInstance(instance, nullptr);
+    glfwDestroyWindow(window);
+    glfwTerminate();
 
-        std::vector<VkLayerProperties> availableLayers(layerCount);
-        vkEnumerateInstanceLayerProperties(&layerCount, availableLayers.data());
-
-        for (const char* layerName : validationLayers) {
-            bool found = false;
-            for (const auto& layerProps : availableLayers) {
-                if (strcmp(layerName, layerProps.layerName) == 0) {
-                    found = true;
-                    break;
-                }
-            }
-            if (!found) return false;
-        }
-
-        return true;
-    }
-
-    void mainLoop() {
-        while (!glfwWindowShouldClose(window)) {
-            glfwPollEvents();
-        }
-    }
-
-    void cleanup() {
-        vkDestroyInstance(instance, nullptr);
-        glfwDestroyWindow(window);
-        glfwTerminate();
-    }
-};
-
-int main() {
-    VulkanApp app;
-
-    try {
-        app.run();
-    }
-    catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-        return EXIT_FAILURE;
-    }
-
-    return EXIT_SUCCESS;
+    return 0;
 }
