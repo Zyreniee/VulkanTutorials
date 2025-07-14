@@ -1,7 +1,6 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <iostream>
 #include <stdexcept>
 #include <cstdlib>
 #include <vector>
@@ -14,6 +13,7 @@ const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
 
 struct Vertex {
+    
     float pos[2];
     float color[3];
 };
@@ -37,11 +37,12 @@ int main() {
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan Triangle", nullptr, nullptr);
-
+    cout << "HEAR ME OUT ROCKSTAR" << GLFW_KEY_END;
     VkInstance instance;
     {
         VkApplicationInfo appInfo{};
         appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
+        
         appInfo.pApplicationName = "Triangle";
         appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
         appInfo.pEngineName = "No Engine";
