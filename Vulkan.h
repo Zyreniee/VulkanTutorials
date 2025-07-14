@@ -127,7 +127,5 @@ int main() {
     vkDestroyInstance(instance, nullptr);
     glfwDestroyWindow(window);
     glfwTerminate();
-    glfwInit();
-    glfwTerminate();
     return 0;
 }
