@@ -36,6 +36,9 @@
     <ClInclude Include="first_app.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
+    <ClInclude Include="lve_pipeline.hpp">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Vulkan.cpp">
@@ -48,6 +51,9 @@
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
     <ClCompile Include="first_app.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
+    <ClCompile Include="lve_pipeline.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
   </ItemGroup>
@@ -66,5 +72,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="simple_shader.vert" />
+    <None Include="simple_shader.frag" />
+    <None Include="compile.sh" />
+    <None Include="compile.bat">
+      <Filter>Kaynak Dosyalar</Filter>
+    </None>
   </ItemGroup>
 </Project>
