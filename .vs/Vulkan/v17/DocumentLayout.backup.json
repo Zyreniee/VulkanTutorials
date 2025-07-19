@@ -62,8 +62,7 @@
               "RelativeToolTip": "first_app.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-15T11:54:25.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T11:54:25.228Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "first_app.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-15T11:30:48.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T11:30:48.215Z"
             },
             {
               "$type": "Document",
@@ -101,8 +99,7 @@
               "RelativeToolTip": "lve_pipeline.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-15T11:31:12.465Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T11:31:12.465Z"
             },
             {
               "$type": "Document",
@@ -114,8 +111,7 @@
               "RelativeToolTip": "compile.bat",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAFAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG7SURBVDhPzZTNSxtBHEBfPGipJ\u002B2iGFBjzJqu4nda0EO99CaCeBOEQlsotCCUakMO6sWrBz8QlZaWInjxXyjtQbNKwCqYUGObRKIosfFSKTazcXsQQWZXJOqhD4aB37x5cxu4TUzTlEc3xhHwD8bBdMkH18ORyLtOrLOr23YH00XAP2BmMplbWQH/gJl34WELuweHfF5eYz91JB9dim3wz8lf9G8Rfib2\u002BH18TGQ7xnJog1T66rBtMByNkzpMc3qaxdegkc0a7Ozuk9w7kFULtsEmzYNhGHhc5VRVOPG6KzEMQb2myqoF22A4GkOIDOGtH2zHdtiIRBFC8DUYklULtsGyUoWyEgUhBF\u002BWVskaBiVKEW2tjbJqwTZYqhTT0dZKg6ZypyCfWq\u002Bbx4/aiSeTvPIPsb4Z5lc6LV\u002BDy4LnVJY76e3pxFtdxeS7j8x8mKeuxsP49Cxz7z/JOlwVvEitWk1djYeXz55Qr91HVd2yArkEI9\u002B3WA2FGJuYIqivENR1WYFcgk/7eul/8RxdX\u002BHt635GR4ZlBXIJKveK8bU0s7gwz8MHPgoL78oKnH1fb\u002BLgyPnHscdMyJP/j39Wh9oGPXeiTgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-07-15T11:28:34.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T11:28:34.991Z"
             },
             {
               "$type": "Document",
@@ -127,8 +123,7 @@
               "RelativeToolTip": "compile.sh",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-15T11:17:43.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T11:17:43.997Z"
             },
             {
               "$type": "Document",
@@ -140,8 +135,7 @@
               "RelativeToolTip": "simple_shader.frag",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-15T10:57:01.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T10:57:01.195Z"
             },
             {
               "$type": "Document",
@@ -153,8 +147,7 @@
               "RelativeToolTip": "simple_shader.vert",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-15T10:35:56.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T10:35:56.908Z"
             },
             {
               "$type": "Document",
@@ -166,8 +159,7 @@
               "RelativeToolTip": "Vulkan.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-13T12:50:09.656Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-13T12:50:09.656Z"
             }
           ]
         }
