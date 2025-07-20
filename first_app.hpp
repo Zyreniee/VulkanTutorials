@@ -1,6 +1,7 @@
 #pragma once
 
 #include "lve_window.hpp"
+#include <string>
 #include "lve_pipeline.hpp"
 
 namespace lve {
@@ -15,7 +16,7 @@ namespace lve {
 	public:
 		static constexpr int HEIGHT = 600;
 		static constexpr int WIDTH = 800;
-		
+		string b = "windowName";
 
 		void run();
 		
