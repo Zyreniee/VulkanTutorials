@@ -6,7 +6,13 @@ using namespace std;
 //std
 #include <fstream>
 #include <stdexcept>
+namespace Lve2 {
+
+
+
+}
 namespace lve {
+
 	LvePipeline::LvePipeline(
 		const string& vertFilePath, const string& fragFilePath) {
 		createGraphicsPipeline(vertFilePath, fragFilePath);
