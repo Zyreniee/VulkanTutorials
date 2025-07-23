@@ -2,15 +2,12 @@
 #include <vector>	
 #include <iostream>
 #include <string>
-using namespace std;
-//std
 #include <fstream>
 #include <stdexcept>
-namespace Lve2 {
+#include <vulkan/vulkan.h>
 
+using namespace std;
 
-
-}
 namespace lve {
 
 	LvePipeline::LvePipeline(
@@ -19,10 +16,11 @@ namespace lve {
 	}
 
 	vector<char> LvePipeline::readFile(const string& filePath) {
-		ifstream file{ filePath,ios::ate | ios::binary };
+		ifstream file{ filePath, ios::ate | ios::binary };
 		if (!file.is_open()) {
 			throw runtime_error("failed to open file: " + filePath);
-	}
+		}
+
 		size_t fileSize = static_cast<size_t>(file.tellg());
 		vector<char> buffer(fileSize);
 
@@ -31,7 +29,8 @@ namespace lve {
 
 		file.close();
 		return buffer;
- }
+	}
+
 	void LvePipeline::createGraphicsPipeline(
 		const string& vertFilePath, const string& fragFilePath) {
 
@@ -41,4 +40,19 @@ namespace lve {
 		cout << "Vertex Shader Code Size: " << vertCode.size() << endl;
 		cout << "Fragment Shader Code Size: " << fragCode.size() << endl;
 	}
-}//namespace lve
+
+	VkShaderModule LvePipeline::createShaderModule(const vector<char>& code) {
+		VkShaderModuleCreateInfo createInfo{};
+		createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+		createInfo.codeSize = code.size();
+		createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
+
+		VkShaderModule shaderModule;
+		if (vkCreateShaderModule(VK_NULL_HANDLE, &createInfo, nullptr, &shaderModule) != VK_SUCCESS) {
+			throw runtime_error("failed to create shader module");
+		}
+
+		return shaderModule;
+	}
+
+}

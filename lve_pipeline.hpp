@@ -1,17 +1,19 @@
 #pragma once
+
 #include <string>
-#include <iostream>
 #include <vector>
-using namespace std;
+#include <vulkan/vulkan.h>
 
 namespace lve {
+
 	class LvePipeline {
 	public:
-		LvePipeline(const string& vertFilePath, const string& fragFilePath);
+		LvePipeline(const std::string& vertFilePath, const std::string& fragFilePath);
 
 	private:
-		static vector<char> readFile(const std::string& filepath);
-
-		void createGraphicsPipeline(const string& vertFilePath, const string& fragFilePath);
+		static std::vector<char> readFile(const std::string& filePath);
+		void createGraphicsPipeline(const std::string& vertFilePath, const std::string& fragFilePath);
+		VkShaderModule createShaderModule(const std::vector<char>& code);
 	};
-}//namespace lve
+
+}
