@@ -8,7 +8,8 @@ using namespace std;
 #include <stdexcept>
 namespace Lve2 {
 
-
+	//You should solve this problem tomorrow
+	//Problem : Error in debug at this and lve_pipeline.hpp
 
 }
 namespace lve {
