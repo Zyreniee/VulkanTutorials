@@ -2,7 +2,6 @@
 
 #include <string>
 #include <vector>
-#include <vulkan/vulkan.h>
 
 namespace lve {
 
@@ -13,7 +12,6 @@ namespace lve {
 	private:
 		static std::vector<char> readFile(const std::string& filePath);
 		void createGraphicsPipeline(const std::string& vertFilePath, const std::string& fragFilePath);
-		VkShaderModule createShaderModule(const std::vector<char>& code);
 	};
 
 }
