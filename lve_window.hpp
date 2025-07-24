@@ -4,6 +4,9 @@
 
 #include <string>
 using namespace std;
+int main() {
+	glfwInit();
+}
 namespace lve {
 	class lveWindow {
 	public:
