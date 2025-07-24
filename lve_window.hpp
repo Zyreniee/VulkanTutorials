@@ -8,17 +8,17 @@ namespace lve {
 	class lveWindow {
 	public:
 		lveWindow(int w, int h, string name);
-	   ~lveWindow();
+		~lveWindow();
 
-	   lveWindow(const lveWindow&) = delete;
-	   lveWindow& operator=(const lveWindow&) = delete;
-	   bool shouldClose() { return glfwWindowShouldClose(window); }
+		lveWindow(const lveWindow&) = delete;
+		lveWindow& operator=(const lveWindow&) = delete;
+		bool shouldClose() { return glfwWindowShouldClose(window); }
 	private:
 		void InitWindow();
 
 		const int width;
 		const int height;
-		GLFWwindow *window;
+		GLFWwindow* window;
 		std::string windowName;
 	};
 }//namespace lve

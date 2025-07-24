@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Downloads\lve_device.hpp" />
     <ClInclude Include="first_app.hpp" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="lve_pipeline.hpp" />
@@ -135,6 +136,7 @@
     <ClInclude Include="Vulkan.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Downloads\lve_device.cpp" />
     <ClCompile Include="first_app.cpp" />
     <ClCompile Include="lve_pipeline.cpp" />
     <ClCompile Include="lve_window.cpp" />

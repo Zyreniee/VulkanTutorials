@@ -1,3 +1,11 @@
-﻿  lve_pipeline.cpp
-LINK : warning LNK4098: defaultlib 'MSVCRT' diğer kitaplıkların kullanımı ile çakışıyor; /NODEFAULTLIB:library kullanın
-  Vulkan.vcxproj -> C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\x64\Debug\Vulkan.exe
+﻿  lve_device.cpp
+  first_app.cpp
+C:\Users\gunes\Downloads\lve_device.hpp(7,10): error C2006: '#include': "DOSYAADI" veya <DOSYAADI> bekleniyordu
+  ('../../../Downloads/lve_device.cpp' kaynak dosyası derleniyor)
+  
+C:\Users\gunes\Downloads\lve_device.hpp(7,10): error C1083: içerme dosyası açılamıyor: '': No such file or directory
+  ('../../../Downloads/lve_device.cpp' kaynak dosyası derleniyor)
+  
+  lve_window.cpp
+  main.cpp
+  Kod Üretiliyor...
