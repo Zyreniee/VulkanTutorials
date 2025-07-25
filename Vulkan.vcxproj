@@ -142,7 +142,6 @@
     <ClCompile Include="lve_window.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="main2.cpp" />
-    <ClCompile Include="Vulkan.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Vulkan.rc" />

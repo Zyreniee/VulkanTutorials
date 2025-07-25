@@ -1,4 +1,4 @@
-#include "lve_pipeline.hpp"
+/* #include "lve_pipeline.hpp"
 #include <vector>	
 #include <iostream>
 #include <string>
@@ -39,3 +39,4 @@ namespace lve {
 		cout << "Fragment Shader Code Size: " << fragCode.size() << endl;
 	}
 }//namespace lve
+*/

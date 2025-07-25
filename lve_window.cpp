@@ -1,4 +1,4 @@
-#include "lve_window.hpp"
+/* #include "lve_window.hpp"
 #include <string>
 using namespace std;
 
@@ -20,3 +20,4 @@ namespace lve {
 	}
 	
 }//namespace lve
+*/

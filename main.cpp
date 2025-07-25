@@ -1,4 +1,4 @@
-#include "first_app.hpp"
+/* #include "first_app.hpp"
 #include <cstdlib>
 #include <iostream>
 #include <stdexcept>
@@ -17,3 +17,4 @@ int main() {
 
 	return EXIT_SUCCESS;
 }
+*/

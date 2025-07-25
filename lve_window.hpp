@@ -1,4 +1,4 @@
-#pragma once
+/* #pragma once
 #include <GLFW/glfw3.h>
 #define GLFW_INCLUDE_VULKAN
 
@@ -25,3 +25,4 @@ namespace lve {
 		std::string windowName;
 	};
 }//namespace lve
+*/

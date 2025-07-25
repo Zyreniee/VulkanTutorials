@@ -21,18 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
-    </ClInclude>
-    <ClInclude Include="Vulkan.h">
-      <Filter>Üst Bilgi Dosyaları</Filter>
-    </ClInclude>
     <ClInclude Include="first_app.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
@@ -45,11 +33,20 @@
     <ClInclude Include="lve_window.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Kaynak Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="Vulkan.h">
+      <Filter>Kaynak Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Kaynak Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Kaynak Dosyaları</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Vulkan.cpp">
-      <Filter>Kaynak Dosyalar</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
@@ -83,11 +80,17 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="simple_shader.vert" />
-    <None Include="simple_shader.frag" />
-    <None Include="compile.sh" />
     <None Include="compile.bat">
       <Filter>Kaynak Dosyalar</Filter>
+    </None>
+    <None Include="simple_shader.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="simple_shader.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="compile.sh">
+      <Filter>Kaynak Dosyaları</Filter>
     </None>
   </ItemGroup>
 </Project>

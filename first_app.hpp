@@ -1,4 +1,4 @@
-#pragma once
+/* #pragma once
 
 #include "lve_window.hpp"
 #include <string>
@@ -22,3 +22,4 @@ namespace lve {
 		
 	};
 } //namespace lve
+*/
