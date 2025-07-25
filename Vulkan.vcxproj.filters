@@ -16,6 +16,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{74a85e60-bdc5-4ff1-91ad-31f2d1029ad1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OtherTutorial%28LikeAGrayMan%29">
+      <UniqueIdentifier>{500047e7-dbd1-4eeb-ad5c-5bb10b9630ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -61,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Downloads\lve_device.cpp">
       <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
+    <ClCompile Include="main2.cpp">
+      <Filter>OtherTutorial%28LikeAGrayMan%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

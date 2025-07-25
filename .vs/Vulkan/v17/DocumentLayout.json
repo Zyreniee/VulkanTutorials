@@ -3,7 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector||{3B902123-F8A7-4915-9F01-361F908088D0}|"
+      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\main2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:main2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_window.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:lve_window.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\Downloads\\lve_device.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -14,10 +19,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:first_app.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_window.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:lve_window.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -68,32 +69,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "vector",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
-              "ViewState": "AgIAAHoIAAAAAAAAAAArwIcIAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-24T18:36:42.774Z",
+              "Title": "main2.cpp",
+              "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\main2.cpp",
+              "RelativeDocumentMoniker": "main2.cpp",
+              "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\main2.cpp",
+              "RelativeToolTip": "main2.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-25T20:44:16.659Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "lve_window.hpp",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_window.hpp",
               "RelativeDocumentMoniker": "lve_window.hpp",
               "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_window.hpp",
               "RelativeToolTip": "lve_window.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-07-24T18:27:36.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "lve_device.hpp",
               "DocumentMoniker": "C:\\Users\\gunes\\Downloads\\lve_device.hpp",
               "RelativeDocumentMoniker": "..\\..\\..\\Downloads\\lve_device.hpp",
@@ -101,12 +102,11 @@
               "RelativeToolTip": "..\\..\\..\\Downloads\\lve_device.hpp",
               "ViewState": "AgIAABUAAAAAAAAAAAD4vyIAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-24T18:22:31.739Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T18:22:31.739Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "lve_device.cpp",
               "DocumentMoniker": "C:\\Users\\gunes\\Downloads\\lve_device.cpp",
               "RelativeDocumentMoniker": "..\\..\\..\\Downloads\\lve_device.cpp",
@@ -114,12 +114,11 @@
               "RelativeToolTip": "..\\..\\..\\Downloads\\lve_device.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-24T18:22:13.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T18:22:13.037Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "first_app.hpp",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.hpp",
               "RelativeDocumentMoniker": "first_app.hpp",
@@ -127,8 +126,7 @@
               "RelativeToolTip": "first_app.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-15T11:54:25.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T11:54:25.228Z"
             },
             {
               "$type": "Document",
@@ -140,8 +138,7 @@
               "RelativeToolTip": "first_app.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-15T11:30:48.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T11:30:48.215Z"
             },
             {
               "$type": "Document",
@@ -153,8 +150,7 @@
               "RelativeToolTip": "lve_pipeline.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-15T11:36:46.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T11:36:46.428Z"
             },
             {
               "$type": "Document",
