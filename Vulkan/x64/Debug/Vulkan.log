@@ -1,16 +1,8 @@
 ﻿  lve_device.cpp
   first_app.cpp
-C:\Users\gunes\Downloads\lve_device.hpp(7,10): error C2006: '#include': "DOSYAADI" veya <DOSYAADI> bekleniyordu
-  ('../../../Downloads/lve_device.cpp' kaynak dosyası derleniyor)
-  
-C:\Users\gunes\Downloads\lve_device.hpp(7,10): error C1083: içerme dosyası açılamıyor: '': No such file or directory
-  ('../../../Downloads/lve_device.cpp' kaynak dosyası derleniyor)
-  
+  lve_pipeline.cpp
   lve_window.cpp
   main.cpp
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\main.cpp(6,5): error C2084: 'int main(void)' işlevinin bir gövdesi zaten var
-      C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\lve_window.hpp(7,5):
-      önceki 'main' tanımına bakın
-  
   main2.cpp
   Kod Üretiliyor...
+  Vulkan.vcxproj -> C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\x64\Debug\Vulkan.exe
