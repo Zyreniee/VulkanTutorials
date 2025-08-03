@@ -129,11 +129,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Downloads\lve_device.hpp" />
-    <ClInclude Include="first_app.hpp" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="engine.h" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="lve_pipeline.hpp" />
-    <ClInclude Include="lve_window.hpp" />
+    <ClInclude Include="instance.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Vulkan.h" />
@@ -148,8 +147,9 @@
   <ItemGroup>
     <None Include="compile.bat" />
     <None Include="compile.sh" />
-    <None Include="simple_shader.frag" />
-    <None Include="simple_shader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="engine.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,8 +1,2 @@
-﻿  lve_device.cpp
-  first_app.cpp
-  lve_pipeline.cpp
-  lve_window.cpp
-  main.cpp
-  main2.cpp
-  Kod Üretiliyor...
-  Vulkan.vcxproj -> C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\x64\Debug\Vulkan.exe
+﻿  engine.cpp
+C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\engine.cpp(6,2): error C3861: 'make_instance': tanımlayıcı bulunamadı
