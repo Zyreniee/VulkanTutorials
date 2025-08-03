@@ -139,14 +139,6 @@
     <ClInclude Include="Vulkan.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Downloads\lve_device.cpp" />
-    <ClCompile Include="first_app.cpp" />
-    <ClCompile Include="lve_pipeline.cpp" />
-    <ClCompile Include="lve_window.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="main2.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="Vulkan.rc" />
   </ItemGroup>
   <ItemGroup>
