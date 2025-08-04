@@ -5,4 +5,10 @@
 #include <vulkan/vulkan.hpp>
 #include <Instance.h>
 using namespace std;
-glfwTerminate();
+
+namespace GLFWWindow {
+	class GLFWWÝndow {
+		glfwInit();
+
+	};
+}

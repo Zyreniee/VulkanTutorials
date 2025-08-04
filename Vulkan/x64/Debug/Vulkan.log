@@ -1,2 +1,345 @@
 ﻿  engine.cpp
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\engine.cpp(6,2): error C3861: 'make_instance': tanımlayıcı bulunamadı
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(35,14): error C2079: 'CInstance' tanımsız class 'POLARITY' kullanıyor
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(37,1): error C2059: sözdizimi hatası: 'public'
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(39,14): error C2588: '::~CInstance': geçersiz genel öğe yok edici
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(39,14): error C2575: 'CInstance': yalnızca üye işlevler ve tabanlar sanal olabilir
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(39,14): error C4430: tür belirticisi eksik - int varsayıldı. Not: C++ varsayılan int desteği içermez
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(39,14): error C2365: 'CInstance': yeniden tanımlama; önceki tanım 'veri değişkeni' idi
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(35,14):
+      'CInstance' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(42,5): error C4430: tür belirticisi eksik - int varsayıldı. Not: C++ varsayılan int desteği içermez
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(42,12): error C2146: sözdizimi hatası: ';' eksik ('AddRef' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(43,5): error C4430: tür belirticisi eksik - int varsayıldı. Not: C++ varsayılan int desteği içermez
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(43,5): error C2086: 'int LONG': yeniden tanımlama
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(42,5):
+      'LONG' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(43,12): error C2146: sözdizimi hatası: ';' eksik ('Release' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(46,18): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(46,26): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(47,25): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(47,33): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(48,18): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(48,26): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(49,19): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(49,27): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(50,18): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(50,26): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(51,21): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(51,29): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(55,23): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(55,31): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(56,10): error C2374: 'SetCharSplat': yeniden tanımlama; birden fazla başlatma
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(55,10):
+      'SetCharSplat' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(56,10): error C2086: 'bool SetCharSplat': yeniden tanımlama
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(55,10):
+      'SetCharSplat' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(56,24): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(56,32): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(57,24): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(57,32): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(58,22): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(58,30): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(59,22): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(59,30): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(60,23): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(60,31): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(61,10): error C2374: 'SetWBEMINT64': yeniden tanımlama; birden fazla başlatma
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(60,10):
+      'SetWBEMINT64' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(61,10): error C2086: 'bool SetWBEMINT64': yeniden tanımlama
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(60,10):
+      'SetWBEMINT64' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(61,23): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(61,31): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(62,10): error C2374: 'SetWBEMINT64': yeniden tanımlama; birden fazla başlatma
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(60,10):
+      'SetWBEMINT64' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(62,10): error C2086: 'bool SetWBEMINT64': yeniden tanımlama
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(60,10):
+      'SetWBEMINT64' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(62,24): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(62,32): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(63,23): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(63,31): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(64,18): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(64,26): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(65,29): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(65,37): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(66,20): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(66,28): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(67,22): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(67,30): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(68,10): error C2374: 'SetCHString': yeniden tanımlama; birden fazla başlatma
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(67,10):
+      'SetCHString' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(68,10): error C2086: 'bool SetCHString': yeniden tanımlama
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(67,10):
+      'SetCHString' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(68,22): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(68,30): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(69,10): error C2374: 'SetCHString': yeniden tanımlama; birden fazla başlatma
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(67,10):
+      'SetCHString' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(69,10): error C2086: 'bool SetCHString': yeniden tanımlama
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(67,10):
+      'SetCHString' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(69,22): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(69,30): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(71,25): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(71,33): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(72,22): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(72,30): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(73,19): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(73,27): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(74,18): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(74,26): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(75,19): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(75,27): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(76,18): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(76,26): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(77,21): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(77,29): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(78,22): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(78,30): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(79,22): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(79,30): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(80,23): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(80,31): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(81,10): error C2374: 'GetWBEMINT64': yeniden tanımlama; birden fazla başlatma
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(80,10):
+      'GetWBEMINT64' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(81,10): error C2086: 'bool GetWBEMINT64': yeniden tanımlama
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(80,10):
+      'GetWBEMINT64' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(81,23): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(81,31): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(82,10): error C2374: 'GetWBEMINT64': yeniden tanımlama; birden fazla başlatma
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(80,10):
+      'GetWBEMINT64' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(82,10): error C2086: 'bool GetWBEMINT64': yeniden tanımlama
+  ('engine.cpp' kaynak dosyası derleniyor)
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(80,10):
+      'GetWBEMINT64' bildirimine bakın
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(82,24): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(82,32): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(83,23): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(83,31): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(84,18): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(84,26): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(85,28): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(85,36): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(86,20): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(86,28): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(87,17): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(87,25): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(88,20): error C2065: 'LPCWSTR': bildirimi yapılmamış tanımlayıcı
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(88,28): error C2146: sözdizimi hatası: ')' eksik ('name' tanımlayıcısından önce)
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\Instance.h(88,28): error C1003: hata sayısı 100 taneyi aştı; derleme durduruluyor
+  ('engine.cpp' kaynak dosyası derleniyor)
+  
