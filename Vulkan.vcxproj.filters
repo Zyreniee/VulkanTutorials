@@ -33,14 +33,14 @@
     <ClInclude Include="Resource.h">
       <Filter>Kaynak Dosyaları</Filter>
     </ClInclude>
-    <ClInclude Include="instance.h">
-      <Filter>Tutorial1</Filter>
-    </ClInclude>
     <ClInclude Include="engine.h">
       <Filter>Tutorial1</Filter>
     </ClInclude>
     <ClInclude Include="config.h">
       <Filter>Tutorial1</Filter>
+    </ClInclude>
+    <ClInclude Include="logging.h">
+      <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

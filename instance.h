@@ -8,33 +8,30 @@
 //
 //***************************************************************************
 
-#if _MSC_VER > 1000
 #pragma once
-#endif
 
-#ifndef _INSTANCE_H_
-#define _INSTANCE_H_
-
-#include <Windows.h>        // LONG, DWORD, WORD, BYTE, HRESULT
-#include <wbemidl.h>        // IWbemClassObject, VARIANT, VARTYPE
-#include <comutil.h>        // SAFEARRAY
-#include <chstring.h>       // CHString
-#include <wbemtime.h>       // WBEMTime, WBEMTimeSpan
+#include <Windows.h>          // LONG, DWORD, BYTE, HRESULT, LPCWSTR vs.
+#include <oaidl.h>            // VARIANT, SAFEARRAY
+#include <wbemcli.h>          // IWbemClassObject
+#include <comdef.h>           // _bstr_t, vbstring vs. (opsiyonel)
 #include <winapifamily.h>
 
-#ifndef POLARITY
-#define POLARITY
-#endif
-
-// Geçici taným: MethodContext gerçek WMI Provider Framework'ten gelir.
-// Eðer Framework yoksa, dummy class ile derleme hatasýz yapýlýr.
-class MethodContext {};
+// Önden bildirmler (forward declarations)
+class MethodContext;
+class CHString;
+class WBEMTime;
+class WBEMTimeSpan;
 
 #pragma region Desktop Family
 #if WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
 
 #define WBEMINT64 CHString
 #define WBEMINT16 short
+
+// POLARITY tanýmý yoksa aþaðýdaki gibi boþ býrakabilirsiniz
+#ifndef POLARITY
+#define POLARITY
+#endif
 
 ///////////////////////////////////////////
 //
@@ -105,7 +102,8 @@ public:
     MethodContext* GetMethodContext() const;
 
 protected:
-    // Microsoft internal use only
+    // All items in this section intended for Microsoft internal use only
+    // use by third parties is unsupported and unrecommended
     void LogError(LPCWSTR errorStr, LPCWSTR pFunctionName, LPCWSTR pArgs = NULL, HRESULT hError = -1) const;
 
     IWbemClassObject* m_piClassObject;
@@ -117,5 +115,3 @@ protected:
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
 #pragma endregion
-
-#endif

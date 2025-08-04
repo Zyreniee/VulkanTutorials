@@ -3,12 +3,5 @@
 #include "instance.h"
 #define GLFW_INCLUDE_VULKAN
 #include <vulkan/vulkan.hpp>
-#include <Instance.h>
 using namespace std;
 
-namespace GLFWWindow {
-	class GLFWWÝndow {
-		glfwInit();
-
-	};
-}
