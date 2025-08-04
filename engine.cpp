@@ -1,11 +1,1 @@
-#include <GLFW/glfw3.h>
-#include "engine.h"
-#include "instance.h"
-#define GLFW_INCLUDE_VULKAN
-#include <vulkan/vulkan.hpp>
-#include "logging.h"
-using namespace std;
-
-Engine::Engine() {
-
-}
+#include <iostream>

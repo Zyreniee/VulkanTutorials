@@ -68,5 +68,8 @@
     <ClCompile Include="engine.cpp">
       <Filter>Tutorial1</Filter>
     </ClCompile>
+    <ClCompile Include="validation_layers.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
