@@ -18,6 +18,15 @@ namespace vkInit {
         if (debug) {
             std::cout << "There are " << availableDevices.size() << " physical device(s) available on this system" << std::endl;
         }
+        struct QueueFamilyIndices {
+            std::optional<uint32_t> graphicsFamily;
+            std::optional<uint32_t> presentFamily;
+
+            bool isComplete() {
+                return graphicsFamily.has_value() && presentFamily.has_value();
+            }
+        };
+
 
         if (availableDevices.empty()) {
             throw std::runtime_error("No physical devices found!");
@@ -44,6 +53,17 @@ namespace vkInit {
 
         // Þimdilik ilk GPU'yu döndürüyoruz
         return availableDevices[0];
+        QueueFamilyIndices findQueueFamilies(vk::PhysicalDevice device, bool debug) {
+            QueueFamilyIndices indices;
+            
+            std::vector<vk::QueueFamilyProperties> queueFamilies = device.getQueueFamilyProperties()
+                if (debug) {
+                    std::cout << "System can support" << queueFamilies.size() << "queue families" << std::endl;
+                }
+            return indices;
+        }
     }
+
+    
 
 }
