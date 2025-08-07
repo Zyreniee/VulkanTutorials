@@ -2,15 +2,12 @@
 
 #include "config.h"
 #include <iostream>
+#include "engine.h"
 #include <stdexcept>
 #include <vulkan/vulkan.hpp>
 #include <GLFW/glfw3.h>
 #include <optional>
-#pragma once
-
-#include <vulkan/vulkan.hpp>
-#include <iostream>
-#include "config.h"
+#include "engine.h"
 
 namespace Engine {
 
@@ -26,18 +23,30 @@ namespace Engine {
     public:
         void make_device();
         vk::Device getDevice() const { return device; }
+        vk::Instance getInstance() const { return instance; }
+        vk::DebugUtilsMessengerEXT getDebugMessenger() const { return debugMessenger; }
 
     private:
         vk::Instance instance;                  // Vulkan instance
         vk::PhysicalDevice physicalDevice;      // Seçilen fiziksel aygýt
         vk::Device device;                      // Mantýksal aygýt
+        vk::DebugUtilsMessengerEXT debugMessenger; // Debug messenger
         bool debugMode = true;                  // Debug modu aktif mi?
+
+        // Debug Messenger için helper fonksiyonlar
+        VkDebugUtilsMessengerCreateInfoEXT populateDebugMessengerCreateInfo();
+        void setupDebugMessenger();
+        static VKAPI_ATTR VkBool32 VKAPI_CALL debugCallback(
+            VkDebugUtilsMessageSeverityFlagBitsEXT       messageSeverity,
+            VkDebugUtilsMessageTypeFlagsEXT              messageTypes,
+            const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData,
+            void* pUserData);
     };
 
     // Queue family bilgilerini bulma fonksiyonu
     QueueFamilyIndices findQueueFamilies(vk::PhysicalDevice device, bool debug);
 
-}
+} // namespace Engine
 
 namespace vkInit {
 
@@ -140,6 +149,7 @@ namespace vkInit {
             }
             return vk::Device{};
         }
+        return nullptr;
     }
 
 } // namespace vkInit

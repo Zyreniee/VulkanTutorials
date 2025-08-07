@@ -1,28 +1,18 @@
+#include "engine.h"
+#include "instance.h"
+#include "logging.h"
 #include "device.h"
-namespace Engine {
+#include "validation_layers.cpp"
+using namespace Engine;
 
-    void Engine::make_device() {
-        physicalDevice = vkInit::choose_physical_device(instance, debugMode);
-        device = vkInit::create_logical_device(physicalDevice, debugMode);
-    }
+GLFWwindow* window;
 
-    QueueFamilyIndices findQueueFamilies(vk::PhysicalDevice device, bool debug) {
-        QueueFamilyIndices indices;
-
-        auto queueFamilies = device.getQueueFamilyProperties();
-
-        if (debug) {
-            std::cout << "System can support " << queueFamilies.size() << " queue families" << std::endl;
-        }
-
-        for (uint32_t i = 0; i < queueFamilies.size(); ++i) {
-            if (queueFamilies[i].queueFlags & vk::QueueFlagBits::eGraphics) {
-                indices.graphicsFamily = i;
-                break;
-            }
-        }
-
-        return indices;
-    }
-
+void make_instance() {
+	VkSurfaceKHR c_style_surface;
+	if (glfwCreateWindowSurface(instance, window, nullptr, &c_style_surface) != VK_SUCCESS) {
+		if (debugCallback) {
+			std::cout << "Failed to abstract the glfw surface for vulkan" << std::endl;
+		}
+	
+	}
 }
