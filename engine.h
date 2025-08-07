@@ -11,7 +11,7 @@ public:
 
     void make_device();
     void make_instance();
-    
+
     vk::Device getDevice() const { return device; }
     vk::Instance getInstance() const { return instance; }
     vk::DebugUtilsMessengerEXT getDebugMessenger() const { return debugMessenger; }
@@ -20,7 +20,7 @@ private:
     void build_glfw_window();
     vk::Instance instance;
     vk::PhysicalDevice physicalDevice;
-    vk::Queue presentQueue{ nullptr };  
+    vk::Queue presentQueue{ nullptr };
     vk::Device device;
     vk::DebugUtilsMessengerEXT debugMessenger;
     bool debugMode;
@@ -33,8 +33,5 @@ private:
         void* pUserData);
 
 
-    vk::SurfaceKHR surface;
-    
-};
-
-}
+    vk::SurfaceKHR surface;;
+};;
