@@ -1,2 +1,5 @@
 ﻿  engine.cpp
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(73,1): error C4716: 'vkInit::create_logical_device' : bir değer döndürmelidir
+C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\engine.cpp(29,1): error C1010: ön derlenmiş üstbilgi aranırken beklenmeyen dosya sonu. kaynak kodunuza '#include "stdafx.h"' eklemeyi unuttunuz mu?
+  validation_layers.cpp
+C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\validation_layers.cpp(131,1): error C1010: ön derlenmiş üstbilgi aranırken beklenmeyen dosya sonu. kaynak kodunuza '#include "stdafx.h"' eklemeyi unuttunuz mu?
+  Kod Üretiliyor...
