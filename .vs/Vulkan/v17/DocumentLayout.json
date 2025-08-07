@@ -7,15 +7,19 @@
       "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:device.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\USERS\\GUNES\\ONEDRIVE\\MASA\u00DCST\u00DC\\VULKANTUTORIALS\\INSTANCE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:INSTANCE.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.44.35207\\INCLUDE\\__MSVC_XLOCINFO_TYPES.HPP||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\engine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -37,11 +41,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Instance.h",
+              "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\Instance.h",
+              "RelativeDocumentMoniker": "Instance.h",
+              "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\Instance.h",
+              "RelativeToolTip": "Instance.h",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAIwHUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-07T09:09:54.811Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -51,14 +68,14 @@
               "RelativeDocumentMoniker": "device.h",
               "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\device.h",
               "RelativeToolTip": "device.h",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADwAAABvAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAD4v0gAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-08-04T13:20:02.669Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "config.h",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\config.h",
               "RelativeDocumentMoniker": "config.h",
@@ -70,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "__msvc_xlocinfo_types.hpp",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_xlocinfo_types.hpp",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\__msvc_xlocinfo_types.hpp",
@@ -82,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "logging.h",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\logging.h",
               "RelativeDocumentMoniker": "logging.h",
@@ -94,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "validation_layers.cpp",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\validation_layers.cpp",
               "RelativeDocumentMoniker": "validation_layers.cpp",
@@ -106,19 +123,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "engine.cpp",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\engine.cpp",
               "RelativeDocumentMoniker": "engine.cpp",
               "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\engine.cpp",
               "RelativeToolTip": "engine.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-03T18:14:54.709Z"
+              "WhenOpened": "2025-08-03T18:14:54.709Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "engine.h",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\engine.h",
               "RelativeDocumentMoniker": "engine.h",

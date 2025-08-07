@@ -114,4 +114,4 @@ protected:
 };
 
 #endif /* WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) */
-#pragma endregion
+

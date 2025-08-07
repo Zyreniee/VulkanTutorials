@@ -1,23 +1,2 @@
 ﻿  engine.cpp
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(56,28): error C2601: 'findQueueFamilies': yerel işlev tanımları geçersiz
-  ('engine.cpp' kaynak dosyası derleniyor)
-      C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(10,83):
-      bu satır henüz eşlenmemiş '{' içeriyor
-  
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(57,13): error C2065: 'QueueFamilyIndices': bildirimi yapılmamış tanımlayıcı
-  ('engine.cpp' kaynak dosyası derleniyor)
-  
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(57,32): error C2146: sözdizimi hatası: ';' eksik ('indices' tanımlayıcısından önce)
-  ('engine.cpp' kaynak dosyası derleniyor)
-  
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(57,32): error C2065: 'indices': bildirimi yapılmamış tanımlayıcı
-  ('engine.cpp' kaynak dosyası derleniyor)
-  
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(60,17): error C2143: sözdizimi hatası: ';' eksik ('if' öncesinde)
-  ('engine.cpp' kaynak dosyası derleniyor)
-  
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(63,20): error C2065: 'indices': bildirimi yapılmamış tanımlayıcı
-  ('engine.cpp' kaynak dosyası derleniyor)
-  
-  validation_layers.cpp
-  Kod Üretiliyor...
+C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(73,1): error C4716: 'vkInit::create_logical_device' : bir değer döndürmelidir
