@@ -50,8 +50,7 @@
               "RelativeToolTip": "engine.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-07T11:11:35.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-07T11:11:35.364Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "device.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-04T13:20:02.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-04T13:20:02.669Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "device.cpp",
               "ViewState": "AgIAADQAAAAAAAAAAAAIwEAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-07T10:30:06.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-07T10:30:06.955Z"
             },
             {
               "$type": "Document",
@@ -89,8 +86,7 @@
               "RelativeToolTip": "config.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-03T18:10:42.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-03T18:10:42.801Z"
             },
             {
               "$type": "Document",
@@ -102,8 +98,7 @@
               "RelativeToolTip": "logging.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-04T10:49:56.637Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-04T10:49:56.637Z"
             },
             {
               "$type": "Document",
@@ -113,7 +108,7 @@
               "RelativeDocumentMoniker": "engine.h",
               "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\engine.h",
               "RelativeToolTip": "engine.h",
-              "ViewState": "AgIAABMAAAAAAAAAAAD4vyQAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-08-03T18:11:44.829Z",
               "EditorCaption": ""
