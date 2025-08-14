@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="first_app.hpp" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="lve_pipeline.hpp" />
     <ClInclude Include="lve_window.hpp" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
@@ -148,11 +149,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="compile.bat" />
-    <None Include="simple_shader.frag" />
-    <None Include="simple_shader.vert" />
+    <None Include="Shaders\simple_shader.frag" />
+    <None Include="Shaders\simple_shader.vert" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="first_app.cpp" />
+    <ClCompile Include="lve_pipeline.cpp" />
     <ClCompile Include="lve_window.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

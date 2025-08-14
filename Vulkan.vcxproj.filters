@@ -35,6 +35,9 @@
     <ClInclude Include="first_app.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
+    <ClInclude Include="lve_pipeline.hpp">
+      <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Vulkan.rc">
@@ -51,10 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="compile.bat" />
-    <None Include="simple_shader.vert">
+    <None Include="Shaders\simple_shader.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="simple_shader.frag">
+    <None Include="Shaders\simple_shader.frag">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
@@ -66,6 +69,9 @@
       <Filter>Tutorial2</Filter>
     </ClCompile>
     <ClCompile Include="first_app.cpp">
+      <Filter>Tutorial2</Filter>
+    </ClCompile>
+    <ClCompile Include="lve_pipeline.cpp">
       <Filter>Tutorial2</Filter>
     </ClCompile>
   </ItemGroup>

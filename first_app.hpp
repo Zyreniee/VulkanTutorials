@@ -1,5 +1,6 @@
 #pragma once
 #include "lve_window.hpp"
+#include "lve_pipeline.hpp"
 
 namespace lve {
 	// FirstApp sýnýfý, uygulamanýn ana yapýsýný temsil eder
@@ -12,5 +13,6 @@ namespace lve {
 	private:
 		lveWindow lveWindow{ WIDTH, HEIGHT, "Hello Vulkan!" }; // Uygulamanýn pencere nesnesi
 		// Diðer üyeler burada tanýmlanabilir (ör: Vulkan instance, device, swapchain, vs.)
+		LvePipeline lvePipeline{ "Shaders/simple_shader.vert.spv", "Shaders/simple_shader.frag.spv" }; // Vulkan pipeline nesnesi
 	};
-}
+}//namespace lve

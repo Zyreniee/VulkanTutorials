@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_pipeline.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:lve_pipeline.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:first_app.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_pipeline.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:lve_pipeline.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\compile.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:compile.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\simple_shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:simple_shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\simple_shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:simple_shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:first_app.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -21,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:first_app.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|solutionrelative:first_app.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71511AA2-B126-4AF8-B35F-BCDBF8D3E83F}|Vulkan.vcxproj|C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_window.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,32 +51,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "simple_shader.frag",
-              "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\simple_shader.frag",
-              "RelativeDocumentMoniker": "simple_shader.frag",
-              "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\simple_shader.frag",
-              "RelativeToolTip": "simple_shader.frag",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-14T12:04:12.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "simple_shader.vert",
-              "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\simple_shader.vert",
-              "RelativeDocumentMoniker": "simple_shader.vert",
-              "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\simple_shader.vert",
-              "RelativeToolTip": "simple_shader.vert",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-14T12:04:01.204Z",
+              "Title": "lve_pipeline.cpp",
+              "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_pipeline.cpp",
+              "RelativeDocumentMoniker": "lve_pipeline.cpp",
+              "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_pipeline.cpp",
+              "RelativeToolTip": "lve_pipeline.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-14T13:58:13.583Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "lve_pipeline.hpp",
+              "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_pipeline.hpp",
+              "RelativeDocumentMoniker": "lve_pipeline.hpp",
+              "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_pipeline.hpp",
+              "RelativeToolTip": "lve_pipeline.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-14T13:54:31.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "compile.bat",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\compile.bat",
               "RelativeDocumentMoniker": "compile.bat",
@@ -84,12 +84,11 @@
               "RelativeToolTip": "compile.bat",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG7SURBVDhPzZTNSxtBHEBfPGipJ\u002B2iGFBjzJqu4nda0EO99CaCeBOEQlsotCCUakMO6sWrBz8QlZaWInjxXyjtQbNKwCqYUGObRKIosfFSKTazcXsQQWZXJOqhD4aB37x5cxu4TUzTlEc3xhHwD8bBdMkH18ORyLtOrLOr23YH00XAP2BmMplbWQH/gJl34WELuweHfF5eYz91JB9dim3wz8lf9G8Rfib2\u002BH18TGQ7xnJog1T66rBtMByNkzpMc3qaxdegkc0a7Ozuk9w7kFULtsEmzYNhGHhc5VRVOPG6KzEMQb2myqoF22A4GkOIDOGtH2zHdtiIRBFC8DUYklULtsGyUoWyEgUhBF\u002BWVskaBiVKEW2tjbJqwTZYqhTT0dZKg6ZypyCfWq\u002Bbx4/aiSeTvPIPsb4Z5lc6LV\u002BDy4LnVJY76e3pxFtdxeS7j8x8mKeuxsP49Cxz7z/JOlwVvEitWk1djYeXz55Qr91HVd2yArkEI9\u002B3WA2FGJuYIqivENR1WYFcgk/7eul/8RxdX\u002BHt635GR4ZlBXIJKveK8bU0s7gwz8MHPgoL78oKnH1fb\u002BLgyPnHscdMyJP/j39Wh9oGPXeiTgAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-08-14T11:30:42.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T11:30:42.856Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "first_app.cpp",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.cpp",
               "RelativeDocumentMoniker": "first_app.cpp",
@@ -101,19 +100,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "first_app.hpp",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.hpp",
               "RelativeDocumentMoniker": "first_app.hpp",
               "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\first_app.hpp",
               "RelativeToolTip": "first_app.hpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-14T10:36:36.388Z"
+              "WhenOpened": "2025-08-14T10:36:36.388Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
@@ -137,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "lve_window.cpp",
               "DocumentMoniker": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_window.cpp",
               "RelativeDocumentMoniker": "lve_window.cpp",
@@ -145,8 +145,7 @@
               "RelativeToolTip": "lve_window.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAqwB8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-14T10:13:00.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T10:13:00.92Z"
             }
           ]
         }
