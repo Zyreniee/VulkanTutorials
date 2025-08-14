@@ -132,11 +132,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="config.h" />
-    <ClInclude Include="device.h" />
-    <ClInclude Include="engine.h" />
+    <ClInclude Include="first_app.hpp" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="logging.h" />
+    <ClInclude Include="lve_window.hpp" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Vulkan.h" />
@@ -149,12 +147,12 @@
     <Image Include="Vulkan.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="compile.bat" />
     <None Include="compile.sh" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine.cpp" />
-    <ClCompile Include="validation_layers.cpp" />
+    <ClCompile Include="first_app.cpp" />
+    <ClCompile Include="lve_window.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

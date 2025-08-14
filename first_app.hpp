@@ -1,25 +1,16 @@
-/* #pragma once
-
+#pragma once
 #include "lve_window.hpp"
-#include <string>
-#include "lve_pipeline.hpp"
 
 namespace lve {
+	// FirstApp sýnýfý, uygulamanýn ana yapýsýný temsil eder
 	class FirstApp {
-	
-	
-	private:
-		lveWindow lveWindow{ WIDTH , HEIGHT,"Hello Vulkan!" };
-		LvePipeline lvePipeline{ "shaders/simple_shader.vert.spv","shaders/simple_shader.frag.spv" };
-
-
 	public:
-		static constexpr int HEIGHT = 600;
-		static constexpr int WIDTH = 800;
-		string b = "windowName";
+		static constexpr int WIDTH = 800; // Varsayýlan pencere geniþliði
+		static constexpr int HEIGHT = 600; // Varsayýlan pencere yüksekliði
+		void run(); // Uygulamanýn ana döngüsünü baþlatan fonksiyon
 
-		void run();
-		
+	private:
+		lveWindow lveWindow{ WIDTH, HEIGHT, "Hello Vulkan!" }; // Uygulamanýn pencere nesnesi
+		// Diðer üyeler burada tanýmlanabilir (ör: Vulkan instance, device, swapchain, vs.)
 	};
-} //namespace lve
-*/
+}

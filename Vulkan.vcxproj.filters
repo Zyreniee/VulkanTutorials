@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Kaynak Dosyalar">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Üst Bilgi Dosyaları">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
@@ -16,8 +12,8 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{74a85e60-bdc5-4ff1-91ad-31f2d1029ad1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tutorial1">
-      <UniqueIdentifier>{46e21c62-3006-442a-b46f-eb58ffa53f10}</UniqueIdentifier>
+    <Filter Include="Tutorial2">
+      <UniqueIdentifier>{94783bb2-a108-454e-ba67-0e4f98992021}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -33,16 +29,10 @@
     <ClInclude Include="Resource.h">
       <Filter>Kaynak Dosyaları</Filter>
     </ClInclude>
-    <ClInclude Include="engine.h">
-      <Filter>Tutorial1</Filter>
-    </ClInclude>
-    <ClInclude Include="config.h">
-      <Filter>Tutorial1</Filter>
-    </ClInclude>
-    <ClInclude Include="logging.h">
+    <ClInclude Include="lve_window.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
-    <ClInclude Include="device.h">
+    <ClInclude Include="first_app.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
     </ClInclude>
   </ItemGroup>
@@ -60,19 +50,19 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="compile.bat">
-      <Filter>Kaynak Dosyalar</Filter>
-    </None>
     <None Include="compile.sh">
       <Filter>Kaynak Dosyaları</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="engine.cpp">
-      <Filter>Tutorial1</Filter>
+    <ClCompile Include="lve_window.cpp">
+      <Filter>Tutorial2</Filter>
     </ClCompile>
-    <ClCompile Include="validation_layers.cpp">
-      <Filter>Kaynak Dosyalar</Filter>
+    <ClCompile Include="main.cpp">
+      <Filter>Tutorial2</Filter>
+    </ClCompile>
+    <ClCompile Include="first_app.cpp">
+      <Filter>Tutorial2</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

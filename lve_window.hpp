@@ -1,28 +1,26 @@
-/* #pragma once
+#pragma once
 #include <GLFW/glfw3.h>
 #define GLFW_INCLUDE_VULKAN
-
 #include <string>
-using namespace std;
-int main() {
-	glfwInit();
-}
-namespace lve {
-	class lveWindow {
-	public:
-		lveWindow(int w, int h, string name);
-		~lveWindow();
 
-		lveWindow(const lveWindow&) = delete;
-		lveWindow& operator=(const lveWindow&) = delete;
-		bool shouldClose() { return glfwWindowShouldClose(window); }
+namespace lve
+{
+	// lveWindow sýnýfý, pencere oluþturma ve yönetme iþlemlerini kapsar
+	class lveWindow
+	{
 	private:
-		void InitWindow();
+		void initWindow(); // Pencereyi baþlatan fonksiyon
+		GLFWwindow* window; // GLFW pencere nesnesi
+	public:
+		lveWindow(int w, int h, std::string name); // Kurucu fonksiyon
+		~lveWindow(); // Yýkýcý fonksiyon
+		const int width = 800; // Pencere geniþliði
+		const int height = 600; // Pencere yüksekliði
+		std::string windowName; // Pencere baþlýðý
 
-		const int width;
-		const int height;
-		GLFWwindow* window;
-		std::string windowName;
+		lveWindow(const lveWindow&) = delete; // Kopyalama iþlemi engellendi
+		lveWindow& operator=(const lveWindow&) = delete; // Atama iþlemi engellendi
+
+		bool shouldClose() { return glfwWindowShouldClose(window); } // Pencere kapanmalý mý kontrolü
 	};
-}//namespace lve
-*/
+}

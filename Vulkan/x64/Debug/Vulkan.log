@@ -1,5 +1,5 @@
-﻿  engine.cpp
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\device.h(12,11): error C2757: 'Engine': bu ada sahip bir simge zaten var ve bu ad bir ad alanı olarak kullanılamaz
-  ('engine.cpp' kaynak dosyası derleniyor)
-  
-C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\engine.cpp(13,7): warning C4551: işlev çağrısında bağımsız değişken listesi eksik
+﻿  first_app.cpp
+  lve_window.cpp
+  main.cpp
+  Kod Üretiliyor...
+  Vulkan.vcxproj -> C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\x64\Debug\Vulkan.exe
