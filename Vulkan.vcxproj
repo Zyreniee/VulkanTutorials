@@ -147,7 +147,9 @@
     <Image Include="Vulkan.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="compile.sh" />
+    <None Include="compile.bat" />
+    <None Include="simple_shader.frag" />
+    <None Include="simple_shader.vert" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="first_app.cpp" />
