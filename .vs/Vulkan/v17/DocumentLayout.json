@@ -62,8 +62,7 @@
               "RelativeToolTip": "Shaders\\simple_shader.frag",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-14T14:25:28.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T14:25:28.236Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "Shaders\\simple_shader.vert",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-14T14:25:08.939Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T14:25:08.939Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "lve_pipeline.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAIwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-14T13:58:13.583Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T13:58:13.583Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "lve_pipeline.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-14T13:54:31.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T13:54:31.22Z"
             },
             {
               "$type": "Document",
@@ -124,7 +120,7 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-14T10:14:27.97Z",
               "EditorCaption": ""
@@ -139,8 +135,7 @@
               "RelativeToolTip": "lve_window.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-14T10:13:09.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T10:13:09.562Z"
             },
             {
               "$type": "Document",
@@ -152,8 +147,7 @@
               "RelativeToolTip": "lve_window.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAqwBIAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-14T10:13:00.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T10:13:00.92Z"
             },
             {
               "$type": "Document",
