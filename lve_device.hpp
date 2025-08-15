@@ -1,5 +1,5 @@
 #pragma once
-
+#include "lve_window.cpp"
 #include "lve_window.hpp"
 #include <vulkan/vulkan.h>
 #include <vulkan/vulkan_core.h>
@@ -76,8 +76,13 @@ class lveDevice {
  private:
   void createInstance();
   void setupDebugMessenger();
-  void createSurface() { lve::createWindowSurface(instance, window.getGLFWwindow(), &surface_); }
+  void createSurface() { window.createWindowSurface(instance, &surface_); }
   void pickPhysicalDevice();
+        // Hatalý satýr:
+        // void createSurface() { lve::lveWindowwindow.createWindowSurface(instance, &surface_); }
+
+        // Doðru hali:
+        void createSurface() { window.createWindowSurface(instance, &surface_); }
   void createLogicalDevice();
   void createCommandPool();
 

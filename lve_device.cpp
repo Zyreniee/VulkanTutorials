@@ -1,4 +1,7 @@
 #include "lve_device.hpp"
+#define GLFW_INCLUDE_VULKAN
+#include "lve_window.hpp"
+#include "lve_window.cpp"
 #include <vulkan/vulkan.h>
 #include <vulkan/vulkan_core.h>
 // std headers
@@ -133,7 +136,11 @@ void lveDevice::pickPhysicalDevice() {
   vkGetPhysicalDeviceProperties(physicalDevice, &properties);
   std::cout << "physical device: " << properties.deviceName << std::endl;
 }
-
+void lveWindow::createWindowSurface(VkInstance instance, VkSurfaceKHR* surface) {
+    if (glfwCreateWindowSurface(instance, window, nullptr, surface) != VK_SUCCESS) {
+        throw std::runtime_error("failed to create window surface");
+    }
+}
 void lveDevice::createLogicalDevice() {
   QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
 

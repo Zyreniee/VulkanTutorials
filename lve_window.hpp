@@ -2,6 +2,8 @@
 #include <GLFW/glfw3.h>
 #define GLFW_INCLUDE_VULKAN
 #include <string>
+#include <vulkan/vulkan.h>
+#include <vulkan/vulkan_core.h>
 
 namespace lve
 {
@@ -25,8 +27,10 @@ namespace lve
 		bool shouldClose() { return glfwWindowShouldClose(window); } // Pencere kapanmalý mý kontrolü
 
 		void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface); 
-
-		// EKSÝK FONKSÝYON EKLENDÝ
-		GLFWwindow* getGLFWwindow() const { return window; }
+		void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface) {
+			if (glfwCreateWindowSurface(instance, window, nullptr, surface) != VK_SUCCESS) {
+				throw std::runtime_error("failed to create window surface");
+			}
+		}
 	};
 }
