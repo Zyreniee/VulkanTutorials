@@ -17,3 +17,4 @@ namespace lve { // Kodun lve isim alaný (namespace) içinde tanýmlandýðýný belirt
 		void createGraphicsPipeline(const std::string& vertFilepath, const std::string& fragFilepath);
 	};
 }
+// Bu kod, Vulkan API kullanarak grafik pipeline'ý oluþturmak için gerekli temel yapýyý saðlar.

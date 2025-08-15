@@ -6,6 +6,7 @@
 namespace lve
 {
 	// lveWindow sýnýfý, pencere oluþturma ve yönetme iþlemlerini kapsar
+
 	class lveWindow
 	{
 	private:
@@ -22,5 +23,10 @@ namespace lve
 		lveWindow& operator=(const lveWindow&) = delete; // Atama iþlemi engellendi
 
 		bool shouldClose() { return glfwWindowShouldClose(window); } // Pencere kapanmalý mý kontrolü
+
+		void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface); 
+
+		// EKSÝK FONKSÝYON EKLENDÝ
+		GLFWwindow* getGLFWwindow() const { return window; }
 	};
 }

@@ -15,6 +15,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{d8f13b32-463d-46d0-99ee-fd161497c098}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Device">
+      <UniqueIdentifier>{5952847b-e767-43fc-af98-ebac8e5ea079}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -37,6 +40,9 @@
     </ClInclude>
     <ClInclude Include="lve_pipeline.hpp">
       <Filter>Üst Bilgi Dosyaları</Filter>
+    </ClInclude>
+    <ClInclude Include="lve_device.hpp">
+      <Filter>Tutorial2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +78,9 @@
       <Filter>Tutorial2</Filter>
     </ClCompile>
     <ClCompile Include="lve_pipeline.cpp">
+      <Filter>Tutorial2</Filter>
+    </ClCompile>
+    <ClCompile Include="lve_device.cpp">
       <Filter>Tutorial2</Filter>
     </ClCompile>
   </ItemGroup>

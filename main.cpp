@@ -7,6 +7,8 @@
 #include <stdexcept> 
 
 // Programýn giriþ noktasý
+#include "lve_window.hpp"
+
 int main() {
 	lve::FirstApp app{}; // Uygulama nesnesi oluþturuluyor
 	try {

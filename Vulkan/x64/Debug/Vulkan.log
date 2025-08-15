@@ -1,2 +1,14 @@
-﻿  main.cpp
-  Vulkan.vcxproj -> C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\x64\Debug\Vulkan.exe
+﻿  first_app.cpp
+  lve_pipeline.cpp
+  lve_window.cpp
+  main.cpp
+  lve_device.cpp
+C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\lve_device.hpp(79,31): error C2039: 'createWindowSurface': bir 'lve' üyesi değil
+  ('lve_device.cpp' kaynak dosyası derleniyor)
+      C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\lve_device.hpp(10,11):
+      'lve' bildirimine bakın
+  
+C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\lve_device.hpp(79,31): error C3861: 'createWindowSurface': tanımlayıcı bulunamadı
+  ('lve_device.cpp' kaynak dosyası derleniyor)
+  
+  Kod Üretiliyor...
