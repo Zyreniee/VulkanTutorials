@@ -1,47 +1,86 @@
 #include "lve_pipeline.hpp"
+#include "lve_device.hpp"
 
-// std kütüphaneleri
-#include <fstream>      // Dosya okuma/yazma için
-#include <iostream>     // std::cout gibi konsol çýktýlarý için
-#include <stdexcept>    // Hata fýrlatma (throw) için
+#include <GLFW/glfw3.h>
+#include <vulkan/vulkan.h>
+#include <fstream>
+#include <iostream>
+#include <stdexcept>
 
-namespace lve
-{
-	// Constructor: Vertex ve fragment shader dosyalarýný alýp pipeline oluþturur
-	LvePipeline::LvePipeline(const std::string& vertFilepath, const std::string& fragFilepath) {
-		createGraphicsPipeline(vertFilepath, fragFilepath);
-	}
+namespace lve {
 
-	// Dosyayý okuyup içeriðini char vektörü olarak döndüren statik fonksiyon
-	std::vector<char> LvePipeline::readFile(const std::string& filepath) {
-		// Dosyayý aç, baþtan sona oku, binary modda
-		std::ifstream file{ filepath, std::ios::ate | std::ios::binary };
-		if (!file.is_open()) {
-			// Dosya açýlamadýysa runtime_error fýrlat
-			throw std::runtime_error("failed to open file: " + filepath);
-		}
+    LvePipeline::LvePipeline(
+        lveDevice& device,
+        const std::string& vertFilepath,
+        const std::string& fragFilepath,
+        const PipelineConfigInfo& configInfo)
+        : device{ device } {
 
-		// Dosya boyutunu öðrenmek için tellg kullan
-		size_t fileSize = static_cast<size_t>(file.tellg());
-		std::vector<char> buffer(fileSize); // Dosya boyutu kadar buffer oluþtur
+        createGraphicsPipeline(vertFilepath, fragFilepath, configInfo);
 
-		file.seekg(0); // Dosyanýn baþýna dön
-		file.read(buffer.data(), fileSize); // Dosya içeriðini buffer’a oku
+    }
 
-		file.close(); // Dosyayý kapat
-		return buffer; // Buffer’ý geri döndür
-	}
+   
+    std::vector<char> LvePipeline::readFile(const std::string& filepath) {
+    
+        std::ifstream file{ filepath, std::ios::ate | std::ios::binary };
+        
+        if (!file.is_open()) {
+        
+            throw std::runtime_error("failed to open file: " + filepath);
+        }
 
-	// Grafik pipeline oluþturma fonksiyonu
-	void LvePipeline::createGraphicsPipeline(const std::string& vertFilepath, const std::string& fragFilepath) {
-		// Shader kodlarýný oku
-		auto vertCode = readFile(vertFilepath);
-		auto fragCode = readFile(fragFilepath);
+      
+        size_t fileSize = static_cast<size_t>(file.tellg());
+        std::vector<char> buffer(fileSize);
 
-		// Shader kodlarýnýn boyutunu konsola yazdýr (debug amaçlý)
-		std::cout << "Vertex shader code size: " << vertCode.size() << std::endl;
-		std::cout << "Fragment shader code size: " << fragCode.size() << std::endl;
+        file.seekg(0);
+        file.read(buffer.data(), fileSize);
+        file.close();
 
-		// Burada shader modülleri ve graphics pipeline oluþturulacak
-	}
-}
+        return buffer;
+    }
+
+    void LvePipeline::createGraphicsPipeline(
+        const std::string& vertFilepath,
+        const std::string& fragFilepath,
+        const PipelineConfigInfo& configInfo) {
+
+        auto vertCode = readFile(vertFilepath);
+        auto fragCode = readFile(fragFilepath);
+
+        std::cout << "Vertex shader code size: " << vertCode.size() << " bytes\n";
+        std::cout << "Fragment shader code size: " << fragCode.size() << " bytes\n";
+
+        // Shader modüllerini oluþtur
+        createShaderModule(vertCode, &vertShaderModule);
+        createShaderModule(fragCode, &fragShaderModule);
+
+        // TODO: Vulkan graphics pipeline oluþturma kodu buraya gelecek
+        (void)configInfo; // kullanýlmadý uyarýsýný susturmak için
+    }
+
+
+    void LvePipeline::createShaderModule(
+       const std::vector<char>& code,
+        VkShaderModule* shaderModule) {
+
+        VkShaderModuleCreateInfo createInfo{};
+        createInfo.sType = VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+        createInfo.codeSize = code.size();
+        createInfo.pCode = reinterpret_cast<const uint32_t*>(code.data());
+
+        // lveDevice yerine artýk üye 'device' kullanýlýyor
+        if (vkCreateShaderModule(device.device(), &createInfo, nullptr, shaderModule) != VK_SUCCESS) {
+            throw std::runtime_error("failed to create shader module");
+        }   
+    }
+
+    PipelineConfigInfo LvePipeline::defaultPipelineConfigInfo(uint32_t width, uint32_t ) {
+        PipelineConfigInfo configInfo;
+
+        return configInfo;
+    }
+
+} // namespace lve
+// Not: Bu kod, LvePipeline sýnýfýnýn temel iþlevselliðini içerir.
