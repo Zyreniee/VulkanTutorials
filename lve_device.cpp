@@ -1,9 +1,7 @@
 #include "lve_device.hpp"
-#define GLFW_INCLUDE_VULKAN
+//   VkCommandBuffer beginSingleTimeCommands();
 #include "lve_window.hpp"
-#include "lve_window.cpp"
-#include <vulkan/vulkan.h>
-#include <vulkan/vulkan_core.h>
+
 // std headers
 #include <cstring>
 #include <iostream>
@@ -136,11 +134,7 @@ void lveDevice::pickPhysicalDevice() {
   vkGetPhysicalDeviceProperties(physicalDevice, &properties);
   std::cout << "physical device: " << properties.deviceName << std::endl;
 }
-void lveWindow::createWindowSurface(VkInstance instance, VkSurfaceKHR* surface) {
-    if (glfwCreateWindowSurface(instance, window, nullptr, surface) != VK_SUCCESS) {
-        throw std::runtime_error("failed to create window surface");
-    }
-}
+
 void lveDevice::createLogicalDevice() {
   QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
 
@@ -200,6 +194,8 @@ void lveDevice::createCommandPool() {
     throw std::runtime_error("failed to create command pool!");
   }
 }
+
+void lveDevice::createSurface() { window.createWindowSurface(instance, &surface_); }
 
 bool lveDevice::isDeviceSuitable(VkPhysicalDevice device) {
   QueueFamilyIndices indices = findQueueFamilies(device);

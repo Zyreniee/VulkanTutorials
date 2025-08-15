@@ -1,8 +1,7 @@
 #pragma once
-#include "lve_window.cpp"
+
 #include "lve_window.hpp"
-#include <vulkan/vulkan.h>
-#include <vulkan/vulkan_core.h>
+
 // std lib headers
 #include <string>
 #include <vector>
@@ -31,14 +30,14 @@ class lveDevice {
   const bool enableValidationLayers = true;
 #endif
 
- lveDevice(lveWindow &window);
+  lveDevice(lveWindow &window);
   ~lveDevice();
 
   // Not copyable or movable
- lveDevice(const lveDevice &) = delete;
+  lveDevice(const lveDevice &) = delete;
   void operator=(const lveDevice &) = delete;
- lveDevice(lveDevice &&) = delete;
- lveDevice &operator=(lveDevice &&) = delete;
+  lveDevice(lveDevice &&) = delete;
+  lveDevice &operator=(lveDevice &&) = delete;
 
   VkCommandPool getCommandPool() { return commandPool; }
   VkDevice device() { return device_; }
@@ -76,13 +75,8 @@ class lveDevice {
  private:
   void createInstance();
   void setupDebugMessenger();
-  void createSurface() { window.createWindowSurface(instance, &surface_); }
+  void createSurface();
   void pickPhysicalDevice();
-        // Hatalý satýr:
-        // void createSurface() { lve::lveWindowwindow.createWindowSurface(instance, &surface_); }
-
-        // Doðru hali:
-        void createSurface() { window.createWindowSurface(instance, &surface_); }
   void createLogicalDevice();
   void createCommandPool();
 
@@ -99,7 +93,7 @@ class lveDevice {
   VkInstance instance;
   VkDebugUtilsMessengerEXT debugMessenger;
   VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
- lveWindow &window;
+  lveWindow &window;
   VkCommandPool commandPool;
 
   VkDevice device_;

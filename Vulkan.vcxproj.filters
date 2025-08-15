@@ -15,9 +15,6 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{d8f13b32-463d-46d0-99ee-fd161497c098}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Device">
-      <UniqueIdentifier>{5952847b-e767-43fc-af98-ebac8e5ea079}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
