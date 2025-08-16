@@ -8,7 +8,31 @@
 namespace lve {
 
     struct PipelineConfigInfo {
-        // Ýleride pipeline yapýlandýrma ayarlarýný buraya ekleyeceðiz
+        // Viewport & Scissor
+        VkViewport viewport{};
+        VkRect2D scissor{};
+        VkPipelineViewportStateCreateInfo viewportInfo{};
+
+        // Input Assembly
+        VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo{};
+
+        // Rasterizer
+        VkPipelineRasterizationStateCreateInfo rasterizationInfo{};
+
+        // Multisampling
+        VkPipelineMultisampleStateCreateInfo multisampleInfo{};
+
+        // Color blending
+        VkPipelineColorBlendAttachmentState colorBlendAttachment{};
+        VkPipelineColorBlendStateCreateInfo colorBlendInfo{};
+
+        // Depth & Stencil
+        VkPipelineDepthStencilStateCreateInfo depthStencilInfo{};
+
+        // Pipeline layout / render pass bilgileri
+        VkPipelineLayout pipelineLayout = VK_NULL_HANDLE;
+        VkRenderPass renderPass = VK_NULL_HANDLE;
+        uint32_t subpass = 0;
     };
 
     class LvePipeline {
@@ -19,18 +43,9 @@ namespace lve {
             const std::string& fragFilepath,
             const PipelineConfigInfo& configInfo);
 
-        ~LvePipeline() {
-            if (vertShaderModule != VK_NULL_HANDLE) {
-                vkDestroyShaderModule(device.device(), vertShaderModule, nullptr);
-            }
-            if (fragShaderModule != VK_NULL_HANDLE) {
-                vkDestroyShaderModule(device.device(), fragShaderModule, nullptr);
-            }
-            if (graphicsPipeline != VK_NULL_HANDLE) {
-                vkDestroyPipeline(device.device(), graphicsPipeline, nullptr);
-            }
-        }
+        ~LvePipeline();
 
+        // Copy constructor ve assignment engellendi
         LvePipeline(const LvePipeline&) = delete;
         LvePipeline& operator=(const LvePipeline&) = delete;
 
@@ -47,11 +62,9 @@ namespace lve {
         void createShaderModule(const std::vector<char>& code, VkShaderModule* shaderModule);
 
         lveDevice& device;
-        VkPipeline      graphicsPipeline{ VK_NULL_HANDLE };
-        VkShaderModule  vertShaderModule{ VK_NULL_HANDLE };
-        VkShaderModule  fragShaderModule{ VK_NULL_HANDLE };
-
+        VkPipeline graphicsPipeline{ VK_NULL_HANDLE };
+        VkShaderModule vertShaderModule{ VK_NULL_HANDLE };
+        VkShaderModule fragShaderModule{ VK_NULL_HANDLE };
     };
 
 } // namespace lve
-// Compare this snippet from lve_pipeline.cpp:
