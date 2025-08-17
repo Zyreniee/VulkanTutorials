@@ -66,8 +66,7 @@
               "RelativeToolTip": "lve_pipeline.cpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAANQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-15T12:59:53.997Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T12:59:53.997Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "RelativeToolTip": "lve_device.hpp",
               "ViewState": "AgIAAEMAAAAAAAAAAAAmwF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-15T13:01:03.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T13:01:03.603Z"
             },
             {
               "$type": "Document",
@@ -90,7 +88,7 @@
               "RelativeDocumentMoniker": "lve_device.cpp",
               "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_device.cpp",
               "RelativeToolTip": "lve_device.cpp",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAswOcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAmwOcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-15T13:01:01.218Z",
               "EditorCaption": ""
@@ -105,8 +103,7 @@
               "RelativeToolTip": "lve_window.hpp",
               "ViewState": "AgIAAB8AAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-14T10:13:09.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T10:13:09.562Z"
             },
             {
               "$type": "Document",
@@ -118,8 +115,7 @@
               "RelativeToolTip": "first_app.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-14T10:43:16.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T10:43:16.021Z"
             },
             {
               "$type": "Document",
@@ -131,8 +127,7 @@
               "RelativeToolTip": "lve_swap_chain.cpp",
               "ViewState": "AgIAAKABAAAAAAAAAAAAANIAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-17T16:50:48.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-17T16:50:48.014Z"
             },
             {
               "$type": "Document",
@@ -144,8 +139,7 @@
               "RelativeToolTip": "lve_swap_chain.hpp",
               "ViewState": "AgIAAFAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-17T16:50:24.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-17T16:50:24.265Z"
             },
             {
               "$type": "Document",
@@ -157,8 +151,7 @@
               "RelativeToolTip": "lve_window.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-14T10:13:00.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T10:13:00.92Z"
             },
             {
               "$type": "Document",
@@ -170,8 +163,7 @@
               "RelativeToolTip": "first_app.hpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-15T13:29:14.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T13:29:14.643Z"
             },
             {
               "$type": "Document",
@@ -183,8 +175,7 @@
               "RelativeToolTip": "lve_pipeline.hpp",
               "ViewState": "AgIAADwAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-15T13:29:08.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-15T13:29:08.757Z"
             }
           ]
         }
