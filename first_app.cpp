@@ -5,7 +5,14 @@
 #include <stdexcept>
 
 namespace lve {
-
+	FirstApp::FirstApp() {
+		createPipelineLayout(); // Pipeline layout oluþturur
+		createPipeline(); // Pipeline'ý oluþturur
+		createCommandBuffers(); // Komut buffer'larýný oluþturur
+	}
+	FirstApp::~FirstApp() {
+		vkDestroyPipelineLayout(device.device(), pipelineLayout, nullptr); // Pipeline layout'u yok eder
+	}
 	// Uygulamanýn ana döngüsü: pencere kapanana kadar çalýþýr
 	void FirstApp::run() {
 		while (!lveWindow.shouldClose()) {
@@ -32,6 +39,22 @@ namespace lve {
 	auto pipelineConfig =
 		LvePipeline::defaultPipelineConfigInfo(lveSwapChain.width(), lveSwapChain.height());
 	    pipelineConfig.renderPass = lveSwapChain.getRenderPass();
+		pipelineConfig.pipelineLayout = pipelineLayout;
+		lvePipeline = std::make_unique<LvePipeline>(
+			device, 
+			"Shaders/simple_shader.vert.spv",
+			"Shaders/simple_shader.frag.spv",
+			pipelineConfig);
 	}
+
 #pragma endregion
+	void FirstApp::createCommandBuffers() {}
+	void FirstApp::drawFrame() {
+		// Bu fonksiyon, her kare için komut buffer'larýný doldurur ve çizer.
+		// Örneðin:
+		// 1. Komut buffer'ýný al
+		// 2. Komutlarý ekle (çizim komutlarý vs.)
+		// 3. Komut buffer'ýný sunucuya gönder
+		std::cout << "Drawing frame..." << std::endl;
+	}
 }

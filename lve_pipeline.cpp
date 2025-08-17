@@ -64,31 +64,25 @@ namespace lve {
         createShaderModule(vertCode, &vertShaderModule);
         createShaderModule(fragCode, &fragShaderModule);
 
-        VkPipelineShaderStageCreateInfo shaderStages[2];
+        VkPipelineShaderStageCreateInfo shaderStages[2]{};
         shaderStages[0].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
         shaderStages[0].stage = VK_SHADER_STAGE_VERTEX_BIT;
         shaderStages[0].module = vertShaderModule;
         shaderStages[0].pName = "main";
-        shaderStages[0].flags = 0;
-        shaderStages[0].pNext = nullptr;
-        shaderStages[0].pSpecializationInfo = nullptr;
 
         shaderStages[1].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
         shaderStages[1].stage = VK_SHADER_STAGE_FRAGMENT_BIT;
         shaderStages[1].module = fragShaderModule;
         shaderStages[1].pName = "main";
-        shaderStages[1].flags = 0;
-        shaderStages[1].pNext = nullptr;
-        shaderStages[1].pSpecializationInfo = nullptr;
 
         VkPipelineVertexInputStateCreateInfo vertexInputInfo{};
         vertexInputInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
-        vertexInputInfo.vertexAttributeDescriptionCount = 0;
-        vertexInputInfo.vertexBindingDescriptionCount = 0;
-        vertexInputInfo.pVertexAttributeDescriptions = nullptr;
-        vertexInputInfo.pVertexBindingDescriptions = nullptr;
+        vertexInputInfo.vertexBindingDescriptionCount = static_cast<uint32_t>(configInfo.bindingDescriptions.size());
+        vertexInputInfo.pVertexBindingDescriptions = configInfo.bindingDescriptions.data();
+        vertexInputInfo.vertexAttributeDescriptionCount = static_cast<uint32_t>(configInfo.attributeDescriptions.size());
+        vertexInputInfo.pVertexAttributeDescriptions = configInfo.attributeDescriptions.data();
 
-		VkPipelineViewportStateCreateInfo viewportInfo{};
+        VkPipelineViewportStateCreateInfo viewportInfo{};
         viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
         viewportInfo.viewportCount = 1;
         viewportInfo.pViewports = &configInfo.viewport;
@@ -111,15 +105,12 @@ namespace lve {
         pipelineInfo.layout = configInfo.pipelineLayout;
         pipelineInfo.renderPass = configInfo.renderPass;
         pipelineInfo.subpass = configInfo.subpass;
-
         pipelineInfo.basePipelineIndex = -1;
         pipelineInfo.basePipelineHandle = VK_NULL_HANDLE;
 
         if (vkCreateGraphicsPipelines(device.device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &graphicsPipeline) != VK_SUCCESS) {
             throw std::runtime_error("failed to create graphics pipeline");
         }
-
-        (void)configInfo; // kullanýlmadý uyarýsýný susturmak için
     }
 
     void LvePipeline::createShaderModule(
@@ -138,6 +129,27 @@ namespace lve {
 
     PipelineConfigInfo LvePipeline::defaultPipelineConfigInfo(uint32_t width, uint32_t height) {
         PipelineConfigInfo configInfo;
+
+        // Vertex input için örnek binding ve attribute
+        VkVertexInputBindingDescription binding{};
+        binding.binding = 0;
+        binding.stride = sizeof(float) * 5; // pos(2) + color(3) örnek
+        binding.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
+        configInfo.bindingDescriptions.push_back(binding);
+
+        VkVertexInputAttributeDescription posAttr{};
+        posAttr.binding = 0;
+        posAttr.location = 0;
+        posAttr.format = VK_FORMAT_R32G32_SFLOAT;
+        posAttr.offset = 0;
+        configInfo.attributeDescriptions.push_back(posAttr);
+
+        VkVertexInputAttributeDescription colorAttr{};
+        colorAttr.binding = 0;
+        colorAttr.location = 1;
+        colorAttr.format = VK_FORMAT_R32G32B32_SFLOAT;
+        colorAttr.offset = sizeof(float) * 2;
+        configInfo.attributeDescriptions.push_back(colorAttr);
 
         configInfo.inputAssemblyInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
         configInfo.inputAssemblyInfo.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;

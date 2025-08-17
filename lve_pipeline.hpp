@@ -12,6 +12,10 @@ namespace lve {
         VkViewport viewport{};
         VkRect2D scissor{};
 
+        // Vertex input
+        std::vector<VkVertexInputBindingDescription> bindingDescriptions;
+        std::vector<VkVertexInputAttributeDescription> attributeDescriptions;
+
         // Input Assembly
         VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo{};
 
