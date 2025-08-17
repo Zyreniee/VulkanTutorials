@@ -43,6 +43,12 @@ namespace lve {
         VkQueue presentQueue() { return presentQueue_; }
         VkCommandPool commandPoolHandle() { return commandPool; }
         VkPhysicalDeviceProperties properties;
+        VkSurfaceKHR surface() { return surface_; }
+
+        // Swapchain için public fonksiyonlar
+        QueueFamilyIndices findPhysicalQueueFamilies() { return findQueueFamilies(physicalDevice); }
+        SwapChainSupportDetails getSwapChainSupport() { return querySwapChainSupport(physicalDevice); }
+        VkFormat findSupportedFormat(const std::vector<VkFormat>& candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
 
     private:
         void createInstance();
@@ -55,9 +61,7 @@ namespace lve {
         bool isDeviceSuitable(VkPhysicalDevice device);
         bool checkDeviceExtensionSupport(VkPhysicalDevice device);
         QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
-        QueueFamilyIndices findPhysicalQueueFamilies() { return findQueueFamilies(physicalDevice); }
         SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device);
-        VkFormat findSupportedFormat(const std::vector<VkFormat>& candidates, VkImageTiling tiling, VkFormatFeatureFlags features);
         uint32_t findMemoryType(uint32_t typeFilter, VkMemoryPropertyFlags properties);
 
         void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);

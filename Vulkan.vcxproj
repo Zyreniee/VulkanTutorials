@@ -137,6 +137,7 @@
     <ClInclude Include="lve_pipeline.hpp" />
     <ClInclude Include="lve_window.hpp" />
     <ClInclude Include="lve_device.hpp" />
+    <ClInclude Include="lve_swap_chain.hpp" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Vulkan.h" />
@@ -159,6 +160,7 @@
     <ClCompile Include="lve_window.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="lve_device.cpp" />
+    <ClCompile Include="lve_swap_chain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

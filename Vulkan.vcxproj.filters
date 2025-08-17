@@ -41,6 +41,9 @@
     <ClInclude Include="lve_device.hpp">
       <Filter>Tutorial2</Filter>
     </ClInclude>
+    <ClInclude Include="lve_swap_chain.hpp">
+      <Filter>Tutorial2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Vulkan.rc">
@@ -78,6 +81,9 @@
       <Filter>Tutorial2</Filter>
     </ClCompile>
     <ClCompile Include="lve_device.cpp">
+      <Filter>Tutorial2</Filter>
+    </ClCompile>
+    <ClCompile Include="lve_swap_chain.cpp">
       <Filter>Tutorial2</Filter>
     </ClCompile>
   </ItemGroup>
