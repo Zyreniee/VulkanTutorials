@@ -1,12 +1,25 @@
 #version 450
 
-layout(location = 0) in vec2 inPosition;   // Vertex pozisyonu
-layout(location = 1) in vec3 inColor;      // Vertex rengi
+layout(location = 0) in vec2 inPosition;
 
-layout(location = 0) out vec3 fragColor;   // Fragment shader’a geçecek renk
+// Vertex shader'dan fragment shader'a renk gönderiyoruz
+layout(location = 0) out vec3 fragColor;
 
 void main() {
-    fragColor = inColor;
-    gl_Position = vec4(inPosition, 0.0, 1.0); // 2D pozisyon -> clip space
+    // Vertex pozisyonu (x, y, z, w)
+    gl_Position = vec4(inPosition, 0.0, 1.0);
+
+    // Renk deðeri RGB formatýnda (0.0 - 1.0 aralýðýnda)
+    // R = Kýrmýzý, G = Yeþil, B = Mavi
+    // Örnek:
+    // fragColor = vec3(1.0, 0.0, 0.0); // Kýrmýzý
+    // fragColor = vec3(0.0, 1.0, 0.0); // Yeþil
+    // fragColor = vec3(0.0, 0.0, 1.0); // Mavi
+    // fragColor = vec3(1.0, 1.0, 0.0); // Sarý
+    // fragColor = vec3(0.0, 1.0, 1.0); // Camgöbeði
+    // fragColor = vec3(1.0, 0.0, 1.0); // Magenta
+    // fragColor = vec3(1.0, 1.0, 1.0); // Beyaz
+    // fragColor = vec3(0.0, 0.0, 0.0); // Siyah
+    fragColor = vec3(1.0, 0.0, 0.0); // Kýrmýzý, burayý deðiþtirerek rengi deðiþtirebilirsin
 }
-// gl_Position, 4D vektör olarak tanýmlanýr (x, y, z, w)    
+// Bu shader, vertex pozisyonunu alýr ve fragment shader'a bir renk gönderir.
