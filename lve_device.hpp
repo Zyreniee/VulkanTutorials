@@ -41,7 +41,7 @@ namespace lve {
         VkDevice device() { return device_; }
         VkQueue graphicsQueue() { return graphicsQueue_; }
         VkQueue presentQueue() { return presentQueue_; }
-        VkCommandPool commandPoolHandle() { return commandPool; }
+        VkCommandPool getCommandPool() { return commandPool; }
         VkPhysicalDeviceProperties properties;
         VkSurfaceKHR surface() { return surface_; }
 

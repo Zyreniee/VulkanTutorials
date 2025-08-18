@@ -1,9 +1,12 @@
-#version 450 // GLSL sürümü 450, Vulkan için uygun
+#version 450
 
-// Fragment shader çýktýsý (fragment color)
-layout(location = 0) out vec4 outColor;
+layout(location = 0) in vec2 inPosition;   // Vertex pozisyonu
+layout(location = 1) in vec3 inColor;      // Vertex rengi
+
+layout(location = 0) out vec3 fragColor;   // Fragment shader’a geçecek renk
 
 void main() {
-    // Her pikselin rengini kýrmýzý olarak ayarla
-    outColor = vec4(1.0, 0.0, 0.0, 1.0); // RGBA: kýrmýzý, yeþil, mavi, alpha
+    fragColor = inColor;
+    gl_Position = vec4(inPosition, 0.0, 1.0); // 2D pozisyon -> clip space
 }
+// gl_Position, 4D vektör olarak tanýmlanýr (x, y, z, w)    
