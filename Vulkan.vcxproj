@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="first_app.hpp" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="lve_model.hpp" />
     <ClInclude Include="lve_pipeline.hpp" />
     <ClInclude Include="lve_window.hpp" />
     <ClInclude Include="lve_device.hpp" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="first_app.cpp" />
+    <ClCompile Include="lve_model.cpp" />
     <ClCompile Include="lve_pipeline.cpp" />
     <ClCompile Include="lve_window.cpp" />
     <ClCompile Include="main.cpp" />
