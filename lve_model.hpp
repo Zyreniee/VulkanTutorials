@@ -1,42 +1,51 @@
-#pragma	once
+#pragma once
 
 #include "lve_device.hpp"
-//libs
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_DEPTH_ZERO_TO_ONE
-#include <glm/glm.hpp>
 #include <vulkan/vulkan.h>
-
-//std
+#include <glm/glm.hpp>
 #include <vector>
 
-namespace lve
-{
-	class LveModel {
-	public:
+namespace lve {
 
-		struct Vertex {
-			glm::vec2 position;
-			static std::vector<VkVertexInputBindingDescription> getBindingDescriptions();
-			static std::vector<VkVertexInputAttributeDescription> getAttributeDescriptions();
-		};
-		LveModel(lveDevice& device, const std::vector<Vertex>& vertices);
-		~LveModel();
+    class LveModel {
+    public:
+        struct Vertex {
+            glm::vec2 position;
 
-		LveModel(const LveModel&) = delete;
-		LveModel& operator=(const LveModel&) = delete;
+            static std::vector<VkVertexInputBindingDescription> getBindingDescriptions() {
+                VkVertexInputBindingDescription binding{};
+                binding.binding = 0;
+                binding.stride = sizeof(Vertex);
+                binding.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
+                return { binding };
+            }
 
-		void bind(VkCommandBuffer commandBuffer);
-		void draw(VkCommandBuffer commandBuffer);
+            static std::vector<VkVertexInputAttributeDescription> getAttributeDescriptions() {
+                VkVertexInputAttributeDescription pos{};
+                pos.binding = 0;
+                pos.location = 0;                           // vertex shader'daki 'layout(location=0)'
+                pos.format = VK_FORMAT_R32G32_SFLOAT;     // glm::vec2 için DOÐRU format
+                pos.offset = offsetof(Vertex, position);
+                return { pos };
+            }
+        };
 
+        LveModel(lveDevice& device, const std::vector<Vertex>& vertices);
+        ~LveModel();
 
+        LveModel(const LveModel&) = delete;
+        LveModel& operator=(const LveModel&) = delete;
 
-	private:
-		void createVertexBuffers(const std::vector<Vertex> &vertices);
+        void bind(VkCommandBuffer commandBuffer);
+        void draw(VkCommandBuffer commandBuffer);
 
-		lveDevice& device;
-		VkBuffer vertexBuffer;
-		VkDeviceMemory vertexBufferMemory;
-		uint32_t vertexCount;	
-	};
-}//namespace lve
+    private:
+        void createVertexBuffers(const std::vector<Vertex>& vertices);
+
+        lveDevice& device;
+        VkBuffer vertexBuffer = VK_NULL_HANDLE;           // güvenli baþlangýç
+        VkDeviceMemory vertexBufferMemory = VK_NULL_HANDLE;
+        uint32_t vertexCount = 0;
+    };
+
+} // namespace lve

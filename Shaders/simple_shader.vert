@@ -1,19 +1,7 @@
 #version 450
 
-layout(location = 0) in vec2 position;
+layout(location = 0) in vec2 inPosition;
 
 void main() {
-
-    gl_Position = vec4(position,0.0 ,1.0);
-
-
-  // fragColor = vec3(0.0, 1.0, 0.0); // Yeþil
-    // fragColor = vec3(0.0, 0.0, 1.0); // Mavi
-    // fragColor = vec3(1.0, 1.0, 0.0); // Sarý
-    // fragColor = vec3(0.0, 1.0, 1.0); // Camgöbeði
-    // fragColor = vec3(1.0, 0.0, 1.0); // Magenta
-    // fragColor = vec3(1.0, 1.0, 1.0); // Beyaz
-   // fragColor = vec3(0.0, 0.0, 0.0); // Siyah
-
+    gl_Position = vec4(inPosition, 0.0, 1.0);
 }
-    
