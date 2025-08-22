@@ -1,10 +1,2 @@
-﻿  first_app.cpp
-  lve_device.cpp
-  lve_model.cpp
-  lve_pipeline.cpp
-  lve_swap_chain.cpp
-  lve_window.cpp
-  main.cpp
-  Kod Üretiliyor...
-LINK : warning LNK4098: defaultlib 'MSVCRT' diğer kitaplıkların kullanımı ile çakışıyor; /NODEFAULTLIB:library kullanın
+﻿  lve_swap_chain.cpp
   Vulkan.vcxproj -> C:\Users\gunes\OneDrive\Masaüstü\VulkanTutorials\x64\Debug\Vulkan.exe
