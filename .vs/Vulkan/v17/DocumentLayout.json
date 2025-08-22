@@ -146,8 +146,7 @@
               "RelativeToolTip": "Shaders\\simple_shader.frag",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-18T10:18:42.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-18T10:18:42.403Z"
             },
             {
               "$type": "Document",
@@ -157,7 +156,7 @@
               "RelativeDocumentMoniker": "lve_swap_chain.cpp",
               "ToolTip": "C:\\Users\\gunes\\OneDrive\\Masa\u00FCst\u00FC\\VulkanTutorials\\lve_swap_chain.cpp",
               "RelativeToolTip": "lve_swap_chain.cpp",
-              "ViewState": "AgIAAJsBAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAH0BAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-17T16:50:48.014Z",
               "EditorCaption": ""
@@ -172,8 +171,7 @@
               "RelativeToolTip": "lve_swap_chain.hpp",
               "ViewState": "AgIAADUAAAAAAAAAAAAmwEQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-17T16:50:24.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-17T16:50:24.265Z"
             },
             {
               "$type": "Document",
