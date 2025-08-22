@@ -21,3 +21,4 @@ Her proje, öğrenme yolculuğumda attığım küçük ama önemli bir adımdır
 Amacım, bilgisayar grafiklerinde derinlemesine bilgi edinmek ve gelecekte oyun ve grafik programlama alanında profesyonel bir kariyere adım atmaktır.  
 
 > ⚠️ Bu repository, deneyim kazanmak ve öğrenmek için oluşturulmuştur. Herkesin kendi keşif yolculuğu farklıdır.
+> Bu maceraya yeni başlayan kişiler destek almak için kullanabilir.
