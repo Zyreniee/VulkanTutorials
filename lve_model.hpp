@@ -1,33 +1,25 @@
 #pragma once
 
 #include "lve_device.hpp"
-#include <vulkan/vulkan.h>
+
+// libs
+#define GLM_FORCE_RADIANS
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
+
+// std
 #include <vector>
+#include <vulkan/vulkan.h>
 
 namespace lve {
-
     class LveModel {
     public:
         struct Vertex {
             glm::vec2 position;
+			glm::vec3 color;
 
-            static std::vector<VkVertexInputBindingDescription> getBindingDescriptions() {
-                VkVertexInputBindingDescription binding{};
-                binding.binding = 0;
-                binding.stride = sizeof(Vertex);
-                binding.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
-                return { binding };
-            }
-
-            static std::vector<VkVertexInputAttributeDescription> getAttributeDescriptions() {
-                VkVertexInputAttributeDescription pos{};
-                pos.binding = 0;
-                pos.location = 0;                           // vertex shader'daki 'layout(location=0)'
-                pos.format = VK_FORMAT_R32G32_SFLOAT;     // glm::vec2 için DOÐRU format
-                pos.offset = offsetof(Vertex, position);
-                return { pos };
-            }
+            static std::vector<VkVertexInputBindingDescription> getBindingDescriptions();
+            static std::vector<VkVertexInputAttributeDescription> getAttributeDescriptions();
         };
 
         LveModel(lveDevice& device, const std::vector<Vertex>& vertices);
@@ -42,10 +34,9 @@ namespace lve {
     private:
         void createVertexBuffers(const std::vector<Vertex>& vertices);
 
-        lveDevice& device;
-        VkBuffer vertexBuffer = VK_NULL_HANDLE;           // güvenli baþlangýç
+        lveDevice& device;        // member adý tipiyle karýþmasýn
+        VkBuffer vertexBuffer = VK_NULL_HANDLE;
         VkDeviceMemory vertexBufferMemory = VK_NULL_HANDLE;
         uint32_t vertexCount = 0;
     };
-
-} // namespace lve
+}  // namespace lve

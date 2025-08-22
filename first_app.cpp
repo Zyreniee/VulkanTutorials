@@ -20,7 +20,7 @@ namespace lve {
     };
 
     FirstApp::FirstApp() {
-		loadModels();
+        loadModels();
         createVertexBuffer();
         createPipelineLayout();
         createPipeline();
@@ -40,13 +40,14 @@ namespace lve {
         }
         vkDeviceWaitIdle(device.device());
     }
+
     void FirstApp::loadModels() {
         std::vector<LveModel::Vertex> vertices{
             {{0.0f, -0.5f}},
             {{0.5f, 0.5f}},
             {{-0.5f, 0.5f}},
         };
-		lveModel = std::make_unique<LveModel>(device, vertices);
+        lveModel = std::make_unique<LveModel>(device, vertices);
     }
 
 #pragma region Pipeline & CommandBuffer Functions
@@ -125,14 +126,8 @@ namespace lve {
             vkCmdBeginRenderPass(commandBuffers[i], &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
 
             lvePipeline->bind(commandBuffers[i]);
-
-            VkBuffer vertexBuffers[] = { vertexBuffer };
-            VkDeviceSize offsets[] = { 0 };
-            vkCmdBindVertexBuffers(commandBuffers[i], 0, 1, vertexBuffers, offsets);
-
-			lvePipeline->bind(commandBuffers[i]);
-			lveModel->draw(commandBuffers[i]);
-			lveModel->bind(commandBuffers[i]);
+            lveModel->bind(commandBuffers[i]); // Model önce bind edilmeli
+            lveModel->draw(commandBuffers[i]);
 
             vkCmdEndRenderPass(commandBuffers[i]);
 
