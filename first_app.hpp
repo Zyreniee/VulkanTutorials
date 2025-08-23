@@ -1,51 +1,53 @@
-#pragma once
+    #pragma once
 
-#include "lve_pipeline.hpp"
-#include "lve_device.hpp"
-#include "lve_swap_chain.hpp"
-#include "lve_window.hpp"
-#include "lve_model.hpp"
+    #include "lve_pipeline.hpp"
+    #include "lve_device.hpp"
+    #include "lve_swap_chain.hpp"
+    #include "lve_window.hpp"
+    #include "lve_model.hpp"
 
-// std
-#include <memory>
-#include <vector>
-#include <vulkan/vulkan.h>
+    // std
+    #include <memory>
+    #include <vector>
+    #include <vulkan/vulkan.h>
 
-namespace lve {
+    namespace lve {
 
-    class FirstApp {
-    public:
-        static constexpr int WIDTH = 800;
-        static constexpr int HEIGHT = 600;
+        class FirstApp {
+        public:
+            static constexpr int WIDTH = 800;
+            static constexpr int HEIGHT = 600;
 
-        FirstApp();
-        ~FirstApp();
+            FirstApp();
+            ~FirstApp();
 
-        FirstApp(const FirstApp&) = delete;
-        FirstApp& operator=(const FirstApp&) = delete;
+            FirstApp(const FirstApp&) = delete;
+            FirstApp& operator=(const FirstApp&) = delete;
 
-        void run();
+            void run();
 
-    private:
-		void loadModels();
-        void createPipelineLayout();
-        void createPipeline();
-        void createCommandBuffers();
-        void drawFrame();
-        void createVertexBuffer();
+        private:
+		    void loadModels();
+            void createPipelineLayout();
+            void createPipeline();
+            void createCommandBuffers();
+            void drawFrame();
+		    void recreateSwapChain();
+		    void recordCommandBuffer(int imagendex);
+            void createVertexBuffer();
 
-        lveWindow lveWindow{ WIDTH, HEIGHT, "Hello Vulkan!" };
-        lveDevice device{ lveWindow };
-        LveSwapChain lveSwapChain{ device, lveWindow.getExtent() };
+            lveWindow lveWindow{ WIDTH, HEIGHT, "Hello Vulkan!" };
+            lveDevice device{ lveWindow };
+            std::unique_ptr<LveSwapChain> lveSwapChain;
 
-        PipelineConfigInfo config = LvePipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT);
-        std::unique_ptr<LvePipeline> lvePipeline;
-        VkPipelineLayout pipelineLayout;
-        std::vector<VkCommandBuffer> commandBuffers;
-        std::unique_ptr<LveModel> lveModel;
+            PipelineConfigInfo config = LvePipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT);
+            std::unique_ptr<LvePipeline> lvePipeline;
+            VkPipelineLayout pipelineLayout;
+            std::vector<VkCommandBuffer> commandBuffers;
+            std::unique_ptr<LveModel> lveModel;
 
-        VkBuffer vertexBuffer;
-        VkDeviceMemory vertexBufferMemory;
-    };
+            VkBuffer vertexBuffer;
+            VkDeviceMemory vertexBufferMemory;
+        };
 
-} // namespace lve
+    } // namespace lve

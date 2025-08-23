@@ -29,7 +29,7 @@ namespace lve {
         ~lveDevice();
 
         lveDevice(const lveDevice&) = delete;
-        void operator=(const lveDevice&) = delete;
+        lveDevice& operator=(const lveDevice&) = delete;
 
         VkCommandBuffer beginSingleTimeCommands();
         void endSingleTimeCommands(VkCommandBuffer commandBuffer);
