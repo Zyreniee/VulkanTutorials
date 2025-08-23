@@ -2,8 +2,6 @@
 #include "lve_device.hpp"
 #include "lve_model.hpp"
 
-#include <GLFW/glfw3.h>
-#include <vulkan/vulkan.h>
 #include <fstream>
 #include <iostream>
 #include <stdexcept>
@@ -86,12 +84,13 @@ namespace lve {
         vertexInputInfo.vertexAttributeDescriptionCount = static_cast<uint32_t>(attributeDescriptions.size());
         vertexInputInfo.pVertexAttributeDescriptions = attributeDescriptions.data();
 
+        // viewportInfo artýk dynamic state ile kullanýlacak, pViewports nullptr ve count 1
         VkPipelineViewportStateCreateInfo viewportInfo{};
         viewportInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
         viewportInfo.viewportCount = 1;
-        viewportInfo.pViewports = &configInfo.viewport;
         viewportInfo.scissorCount = 1;
-        viewportInfo.pScissors = &configInfo.scissor;
+        viewportInfo.pViewports = nullptr;
+        viewportInfo.pScissors = nullptr;
 
         VkGraphicsPipelineCreateInfo pipelineInfo{};
         pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
@@ -104,7 +103,7 @@ namespace lve {
         pipelineInfo.pMultisampleState = &configInfo.multisampleInfo;
         pipelineInfo.pColorBlendState = &configInfo.colorBlendInfo;
         pipelineInfo.pDepthStencilState = &configInfo.depthStencilInfo;
-        pipelineInfo.pDynamicState = nullptr;
+        pipelineInfo.pDynamicState = &configInfo.dynamicStateInfo;
 
         pipelineInfo.layout = configInfo.pipelineLayout;
         pipelineInfo.renderPass = configInfo.renderPass;
@@ -135,13 +134,10 @@ namespace lve {
         vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, graphicsPipeline);
     }
 
-    PipelineConfigInfo LvePipeline::defaultPipelineConfigInfo(uint32_t width, uint32_t height) {
-        PipelineConfigInfo configInfo;
-
-        // Vertex input için örnek binding ve attribute
+    void LvePipeline::defaultPipelineConfigInfo(PipelineConfigInfo& configInfo) {
         VkVertexInputBindingDescription binding{};
         binding.binding = 0;
-        binding.stride = sizeof(float) * 5; // pos(2) + color(3) örnek
+        binding.stride = sizeof(float) * 5;
         binding.inputRate = VK_VERTEX_INPUT_RATE_VERTEX;
         configInfo.bindingDescriptions.push_back(binding);
 
@@ -163,16 +159,6 @@ namespace lve {
         configInfo.inputAssemblyInfo.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
         configInfo.inputAssemblyInfo.primitiveRestartEnable = VK_FALSE;
 
-        configInfo.viewport.x = 0.0f;
-        configInfo.viewport.y = 0.0f;
-        configInfo.viewport.width = static_cast<float>(width);
-        configInfo.viewport.height = static_cast<float>(height);
-        configInfo.viewport.minDepth = 0.0f;
-        configInfo.viewport.maxDepth = 1.0f;
-
-        configInfo.scissor.offset = { 0, 0 };
-        configInfo.scissor.extent = { width ,height };
-
         configInfo.rasterizationInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO;
         configInfo.rasterizationInfo.depthClampEnable = VK_FALSE;
         configInfo.rasterizationInfo.rasterizerDiscardEnable = VK_FALSE;
@@ -191,8 +177,7 @@ namespace lve {
         configInfo.multisampleInfo.alphaToOneEnable = VK_FALSE;
 
         configInfo.colorBlendAttachment.colorWriteMask =
-            VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT |
-            VK_COLOR_COMPONENT_A_BIT;
+            VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
         configInfo.colorBlendAttachment.blendEnable = VK_FALSE;
 
         configInfo.colorBlendInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
@@ -214,8 +199,12 @@ namespace lve {
         configInfo.depthStencilInfo.maxDepthBounds = 1.0f;
         configInfo.depthStencilInfo.stencilTestEnable = VK_FALSE;
 
-        return configInfo;
+        // Dynamic state
+        configInfo.dynamicStateEnables = { VK_DYNAMIC_STATE_VIEWPORT, VK_DYNAMIC_STATE_SCISSOR };
+        configInfo.dynamicStateInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_DYNAMIC_STATE_CREATE_INFO;
+        configInfo.dynamicStateInfo.pDynamicStates = configInfo.dynamicStateEnables.data();
+        configInfo.dynamicStateInfo.dynamicStateCount = static_cast<uint32_t>(configInfo.dynamicStateEnables.size());
+        configInfo.dynamicStateInfo.flags = 0;
     }
 
 } // namespace lve
-// Compare this snippet from lve_device.cpp:

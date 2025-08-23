@@ -1,6 +1,8 @@
 #pragma once
 
 #include "lve_device.hpp"
+#include "lve_model.hpp"
+
 #include <string>
 #include <vector>
 #include <vulkan/vulkan.h>
@@ -8,33 +10,40 @@
 namespace lve {
 
     struct PipelineConfigInfo {
-        // Viewport & Scissor
-        VkViewport viewport{};
-        VkRect2D scissor{};
+        PipelineConfigInfo() = default;
+        PipelineConfigInfo(const PipelineConfigInfo&) = delete;
+        PipelineConfigInfo& operator=(const PipelineConfigInfo&) = delete;
 
         // Vertex input
         std::vector<VkVertexInputBindingDescription> bindingDescriptions;
         std::vector<VkVertexInputAttributeDescription> attributeDescriptions;
 
+        // Dynamic states
+        std::vector<VkDynamicState> dynamicStateEnables;
+        VkPipelineDynamicStateCreateInfo dynamicStateInfo;
+
+        // Viewport
+        VkPipelineViewportStateCreateInfo viewportInfo;
+
         // Input Assembly
-        VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo{};
+        VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
 
         // Rasterizer
-        VkPipelineRasterizationStateCreateInfo rasterizationInfo{};
+        VkPipelineRasterizationStateCreateInfo rasterizationInfo;
 
         // Multisampling
-        VkPipelineMultisampleStateCreateInfo multisampleInfo{};
+        VkPipelineMultisampleStateCreateInfo multisampleInfo;
 
         // Color blending
-        VkPipelineColorBlendAttachmentState colorBlendAttachment{};
-        VkPipelineColorBlendStateCreateInfo colorBlendInfo{};
+        VkPipelineColorBlendAttachmentState colorBlendAttachment;
+        VkPipelineColorBlendStateCreateInfo colorBlendInfo;
 
-        // Depth & Stencil
-        VkPipelineDepthStencilStateCreateInfo depthStencilInfo{};
+        // Depth & stencil
+        VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
 
-        // Pipeline layout / render pass bilgileri
-        VkPipelineLayout pipelineLayout = VK_NULL_HANDLE;
-        VkRenderPass renderPass = VK_NULL_HANDLE;
+        // Pipeline layout / render pass
+        VkPipelineLayout pipelineLayout = nullptr;
+        VkRenderPass renderPass = nullptr;
         uint32_t subpass = 0;
     };
 
@@ -48,13 +57,12 @@ namespace lve {
 
         ~LvePipeline();
 
-        // Copy constructor ve assignment engellendi
         LvePipeline(const LvePipeline&) = delete;
         LvePipeline& operator=(const LvePipeline&) = delete;
 
         void bind(VkCommandBuffer commandBuffer);
 
-        static PipelineConfigInfo defaultPipelineConfigInfo(uint32_t width, uint32_t height);
+        static void defaultPipelineConfigInfo(PipelineConfigInfo& configInfo);
 
     private:
         static std::vector<char> readFile(const std::string& filepath);
@@ -73,4 +81,3 @@ namespace lve {
     };
 
 } // namespace lve
-//         VkDevice device_;

@@ -31,6 +31,7 @@
             void createPipelineLayout();
             void createPipeline();
             void createCommandBuffers();
+			void freeCommandBuffers();
             void drawFrame();
 		    void recreateSwapChain();
 		    void recordCommandBuffer(int imagendex);
@@ -40,7 +41,8 @@
             lveDevice device{ lveWindow };
             std::unique_ptr<LveSwapChain> lveSwapChain;
 
-            PipelineConfigInfo config = LvePipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT);
+            PipelineConfigInfo pipelineConfig;  // Boþ struct oluþtur, fonksiyonla dolduracaðýz
+
             std::unique_ptr<LvePipeline> lvePipeline;
             VkPipelineLayout pipelineLayout;
             std::vector<VkCommandBuffer> commandBuffers;

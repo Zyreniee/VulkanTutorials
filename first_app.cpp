@@ -10,6 +10,7 @@
 #include <stdexcept>
 #include <memory>
 #include <cstring>
+#include <cassert>
 
 namespace lve {
 
@@ -52,7 +53,8 @@ namespace lve {
         std::vector<LveModel::Vertex> vertices{
             {{0.0f, -0.5f},{1.0f,0.0f,0.0f}},
             {{0.5f, 0.5f},{0.0f,1.0f,0.0f}},
-            {{-0.5f, 0.5f},{0.0f,0.0f,1.0f}} };
+            {{-0.5f, 0.5f},{0.0f,0.0f,1.0f}}
+        };
         lveModel = std::make_unique<LveModel>(device, vertices);
     }
 
@@ -68,10 +70,25 @@ namespace lve {
     }
 
     void FirstApp::createPipeline() {
-        auto pipelineConfig = LvePipeline::defaultPipelineConfigInfo(lveSwapChain->width(), lveSwapChain->height());
+        assert(lveSwapChain != nullptr && "Cannot create pipeline before swap chain!");
+        assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout!");
+
+        PipelineConfigInfo pipelineConfig{};
+        LvePipeline::defaultPipelineConfigInfo(pipelineConfig); // doldur
+
+        // Swapchain ve pipeline layout bilgilerini ekle
         pipelineConfig.renderPass = lveSwapChain->getRenderPass();
         pipelineConfig.pipelineLayout = pipelineLayout;
 
+        // Pipeline oluþtur
+        lvePipeline = std::make_unique<LvePipeline>(
+            device,
+            "Shaders/simple_shader.vert.spv",
+            "Shaders/simple_shader.frag.spv",
+            pipelineConfig
+        );
+
+        // Vertex input ayarlarýný ekle
         pipelineConfig.bindingDescriptions.clear();
         pipelineConfig.attributeDescriptions.clear();
 
@@ -87,13 +104,6 @@ namespace lve {
         posAttr.format = VK_FORMAT_R32G32_SFLOAT;
         posAttr.offset = 0;
         pipelineConfig.attributeDescriptions.push_back(posAttr);
-
-        lvePipeline = std::make_unique<LvePipeline>(
-            device,
-            "Shaders/simple_shader.vert.spv",
-            "Shaders/simple_shader.frag.spv",
-            pipelineConfig
-        );
     }
 
     void FirstApp::recreateSwapChain() {
@@ -105,19 +115,20 @@ namespace lve {
 
         vkDeviceWaitIdle(device.device());
 
-        // Eski swap chain'i destroy et
-        if (lveSwapChain) {
-            lveSwapChain.reset();
+        if (!lveSwapChain) {
+            lveSwapChain = std::make_unique<LveSwapChain>(device, extent);
+        }
+        else {
+            lveSwapChain = std::make_unique<LveSwapChain>(device, extent, std::move(lveSwapChain));
+            if (lveSwapChain->imageCount() != commandBuffers.size()) {
+                freeCommandBuffers();
+                createCommandBuffers();
+            }
         }
 
-        // Command buffer'larý temizle
-        commandBuffers.clear();
-
-        // Yeni swap chain ve pipeline oluþtur
-        lveSwapChain = std::make_unique<LveSwapChain>(device, extent);
         createPipeline();
 
-        createCommandBuffers();
+        // Command buffer'larý yeniden record et
         for (size_t i = 0; i < commandBuffers.size(); i++)
             recordCommandBuffer(static_cast<int>(i));
     }
@@ -135,6 +146,18 @@ namespace lve {
         }
     }
 
+    void FirstApp::freeCommandBuffers() {
+        if (!commandBuffers.empty()) {
+            vkFreeCommandBuffers(
+                device.device(),
+                device.getCommandPool(),
+                static_cast<uint32_t>(commandBuffers.size()),
+                commandBuffers.data()
+            );
+            commandBuffers.clear();
+        }
+    }
+
     void FirstApp::recordCommandBuffer(int imageIndex) {
         VkCommandBufferBeginInfo beginInfo{};
         beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
@@ -147,7 +170,7 @@ namespace lve {
         renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
         renderPassInfo.renderPass = lveSwapChain->getRenderPass();
         renderPassInfo.framebuffer = lveSwapChain->getFrameBuffer(imageIndex);
-        renderPassInfo.renderArea.offset = { 0,0 };
+        renderPassInfo.renderArea.offset = { 0, 0 };
         renderPassInfo.renderArea.extent = lveSwapChain->getSwapChainExtent();
 
         std::array<VkClearValue, 2> clearValues{};
@@ -157,6 +180,18 @@ namespace lve {
         renderPassInfo.pClearValues = clearValues.data();
 
         vkCmdBeginRenderPass(commandBuffers[imageIndex], &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
+
+        VkViewport viewport{};
+        viewport.x = 0.0f;
+        viewport.y = 0.0f;
+        viewport.width = static_cast<float>(lveSwapChain->getSwapChainExtent().width);
+        viewport.height = static_cast<float>(lveSwapChain->getSwapChainExtent().height);
+        viewport.minDepth = 0.0f;
+        viewport.maxDepth = 1.0f;
+
+        VkRect2D scissor{ {0, 0}, lveSwapChain->getSwapChainExtent() };
+        vkCmdSetViewport(commandBuffers[imageIndex], 0, 1, &viewport);
+        vkCmdSetScissor(commandBuffers[imageIndex], 0, 1, &scissor);
 
         lvePipeline->bind(commandBuffers[imageIndex]);
         lveModel->bind(commandBuffers[imageIndex]);
