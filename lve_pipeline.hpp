@@ -1,11 +1,10 @@
 #pragma once
 
 #include "lve_device.hpp"
-#include "lve_model.hpp"
 
+// std
 #include <string>
 #include <vector>
-#include <vulkan/vulkan.h>
 
 namespace lve {
 
@@ -14,34 +13,15 @@ namespace lve {
         PipelineConfigInfo(const PipelineConfigInfo&) = delete;
         PipelineConfigInfo& operator=(const PipelineConfigInfo&) = delete;
 
-        // Vertex input
-        std::vector<VkVertexInputBindingDescription> bindingDescriptions;
-        std::vector<VkVertexInputAttributeDescription> attributeDescriptions;
-
-        // Dynamic states
-        std::vector<VkDynamicState> dynamicStateEnables;
-        VkPipelineDynamicStateCreateInfo dynamicStateInfo;
-
-        // Viewport
         VkPipelineViewportStateCreateInfo viewportInfo;
-
-        // Input Assembly
         VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
-
-        // Rasterizer
         VkPipelineRasterizationStateCreateInfo rasterizationInfo;
-
-        // Multisampling
         VkPipelineMultisampleStateCreateInfo multisampleInfo;
-
-        // Color blending
         VkPipelineColorBlendAttachmentState colorBlendAttachment;
         VkPipelineColorBlendStateCreateInfo colorBlendInfo;
-
-        // Depth & stencil
         VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
-
-        // Pipeline layout / render pass
+        std::vector<VkDynamicState> dynamicStateEnables;
+        VkPipelineDynamicStateCreateInfo dynamicStateInfo;
         VkPipelineLayout pipelineLayout = nullptr;
         VkRenderPass renderPass = nullptr;
         uint32_t subpass = 0;
@@ -50,11 +30,10 @@ namespace lve {
     class LvePipeline {
     public:
         LvePipeline(
-            lveDevice& device,
+            LveDevice& device,
             const std::string& vertFilepath,
             const std::string& fragFilepath,
             const PipelineConfigInfo& configInfo);
-
         ~LvePipeline();
 
         LvePipeline(const LvePipeline&) = delete;
@@ -74,10 +53,9 @@ namespace lve {
 
         void createShaderModule(const std::vector<char>& code, VkShaderModule* shaderModule);
 
-        lveDevice& device;
-        VkPipeline graphicsPipeline{ VK_NULL_HANDLE };
-        VkShaderModule vertShaderModule{ VK_NULL_HANDLE };
-        VkShaderModule fragShaderModule{ VK_NULL_HANDLE };
+        LveDevice& lveDevice;
+        VkPipeline graphicsPipeline;
+        VkShaderModule vertShaderModule;
+        VkShaderModule fragShaderModule;
     };
-
-} // namespace lve
+}  // namespace lve

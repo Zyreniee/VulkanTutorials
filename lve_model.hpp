@@ -9,20 +9,19 @@
 
 // std
 #include <vector>
-#include <vulkan/vulkan.h>
 
 namespace lve {
     class LveModel {
     public:
         struct Vertex {
             glm::vec2 position;
-			glm::vec3 color;
+            glm::vec3 color;
 
             static std::vector<VkVertexInputBindingDescription> getBindingDescriptions();
             static std::vector<VkVertexInputAttributeDescription> getAttributeDescriptions();
         };
 
-        LveModel(lveDevice& device, const std::vector<Vertex>& vertices);
+        LveModel(LveDevice& device, const std::vector<Vertex>& vertices);
         ~LveModel();
 
         LveModel(const LveModel&) = delete;
@@ -34,9 +33,9 @@ namespace lve {
     private:
         void createVertexBuffers(const std::vector<Vertex>& vertices);
 
-        lveDevice& device;        // member adý tipiyle karýþmasýn
-        VkBuffer vertexBuffer = VK_NULL_HANDLE;
-        VkDeviceMemory vertexBufferMemory = VK_NULL_HANDLE;
-        uint32_t vertexCount = 0;
+        LveDevice& lveDevice;
+        VkBuffer vertexBuffer;
+        VkDeviceMemory vertexBufferMemory;
+        uint32_t vertexCount;
     };
 }  // namespace lve
