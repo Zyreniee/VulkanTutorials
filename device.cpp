@@ -46,7 +46,7 @@ namespace vkInit {
             }
         }
 
-        return devices[0]; // Basitçe ilk cihazý seçiyoruz
+        return devices[0]; // Basite ilk cihaz seiyoruz
     }
 
     vk::Device create_logical_device(vk::PhysicalDevice physicalDevice, bool debug) {
