@@ -47,7 +47,7 @@ namespace lve {
         }
     }
 
-    // class member functions
+    // class member functions (main)
     LveDevice::LveDevice(LveWindow& window) : window{ window } {
         createInstance();
         setupDebugMessenger();
