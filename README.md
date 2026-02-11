@@ -1,24 +1,68 @@
-# My Vulkan Learning Journey 🎮
+# VulkanTutorials
 
-Hi! I'm **15 years old** and passionate about games and graphics.  
-This repository was created to document my journey learning Vulkan API and to share my experiences.  
+A C++ Vulkan learning repository focused on building fundamentals through small, incremental experiments:
+instance/device setup, swap chain management, graphics pipeline creation, command buffers, synchronization, and GLSL shaders.
 
-This project is entirely **for learning and exploration purposes**. The code and examples shared here are part of my trial-and-error process and are not intended to be a full game engine or professional project.  
+This is a learning workspace. Code structure and abstractions will evolve as new topics are added and old parts are refactored.
 
----
+## Scope
 
-## Contents
-In this repository, you will find my experiments and work with Vulkan:  
-- Rendering simple triangles and 3D objects  
-- Swapchain and pipeline configurations  
-- Shader examples written in GLSL  
-- Render pass and command buffer experiments  
+What you can expect to find here:
+- Vulkan initialization (instance, validation layers, physical/logical device)
+- Swap chain lifecycle handling (recreate on resize, surface capabilities, image views)
+- Graphics pipeline setup (shaders, fixed-function state, render pass / attachments)
+- Command buffers, queues, and synchronization primitives
+- GLSL shaders compiled to SPIR-V
 
-Each project represents a small but important step in my learning journey.  
+Non-goals (for now):
+- A stable engine API
+- Cross-platform build system
+- Long-term backward compatibility between commits
 
----
+## Build (Windows / Visual Studio)
 
-My goal is to gain deep knowledge in computer graphics and eventually pursue a professional career in game and graphics programming.  
+### Prerequisites
+- Vulkan-capable GPU and driver
+- Vulkan SDK installed (includes validation layers and shader compiler tools)
+- Visual Studio (x64 toolchain)
 
-> ⚠️ This repository is created for gaining experience and learning. Everyone’s learning journey is different.  
-> Beginners can use this as a reference and for support in their own exploration.
+### Steps
+1. Open `Vulkan.sln` in Visual Studio.
+2. Select `x64` + `Debug` or `Release`.
+3. Build and run the startup project.
+
+If the build cannot find Vulkan headers/libraries, verify that the Vulkan SDK is installed correctly and your environment is configured.
+
+## Shader compilation (GLSL -> SPIR-V)
+
+GLSL shaders live under `Shaders/`. Compile them to SPIR-V before running the application.
+
+- Use the provided script (`compile.bat`) if you are on Windows.
+- Alternatively, use `glslc` from the Vulkan SDK to compile `.vert/.frag` files into `.spv` outputs.
+
+Keep generated `.spv` files in the location expected by the application at runtime.
+
+## Repository layout (high level)
+
+- `Shaders/`           Shader sources and SPIR-V outputs
+- `lve_*.{hpp,cpp}`    Vulkan wrappers/abstractions used during learning
+- `main.cpp`           Current entry point / demo runner
+- `Vulkan.sln`         Visual Studio solution
+
+## Notes
+
+This repository is intentionally iterative:
+- Commits may contain partial work while a feature is being explored.
+- Refactors are expected as understanding improves.
+- If you are using this as reference, prefer reading the latest commit on `main`.
+
+## References
+
+- Vulkan Specification and official resources: https://www.khronos.org/vulkan/
+- Vulkan SDK (LunarG): https://vulkan.lunarg.com/
+- Vulkan validation layers: https://github.com/KhronosGroup/Vulkan-ValidationLayers
+
+## License
+
+No license file is provided in this repository at the moment.
+If you plan to reuse or redistribute any part of this code, add an explicit license first.
