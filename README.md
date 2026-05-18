@@ -7,7 +7,7 @@
 <p>
   <img src="https://img.shields.io/badge/Vulkan-C40000?style=for-the-badge&logo=vulkan&logoColor=white" />
   <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
-  <img src="https://img.shields.io/badge/Status-Iterative_Development-4EAA25?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Active_Development-4EAA25?style=for-the-badge" />
 </p>
 
 
