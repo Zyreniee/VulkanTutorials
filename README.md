@@ -1,68 +1,74 @@
-# VulkanTutorials
+<div align="center">
 
-A C++ Vulkan learning repository focused on building fundamentals through small, incremental experiments:
-instance/device setup, swap chain management, graphics pipeline creation, command buffers, synchronization, and GLSL shaders.
+# Core Vulkan Tutorials
 
-This is a learning workspace. Code structure and abstractions will evolve as new topics are added and old parts are refactored.
+**Incremental Learning Workspace for Bare-Metal Vulkan & C++**
 
-## Scope
+<p>
+  <img src="https://img.shields.io/badge/Vulkan-C40000?style=for-the-badge&logo=vulkan&logoColor=white" />
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Iterative_Development-4EAA25?style=for-the-badge" />
+</p>
 
-What you can expect to find here:
-- Vulkan initialization (instance, validation layers, physical/logical device)
-- Swap chain lifecycle handling (recreate on resize, surface capabilities, image views)
-- Graphics pipeline setup (shaders, fixed-function state, render pass / attachments)
-- Command buffers, queues, and synchronization primitives
-- GLSL shaders compiled to SPIR-V
 
-Non-goals (for now):
-- A stable engine API
-- Cross-platform build system
-- Long-term backward compatibility between commits
+</div>
 
-## Build (Windows / Visual Studio)
+---
+
+## About This Workspace
+
+A C++ Vulkan learning repository focused on building fundamentals through small, incremental experiments. 
+
+Unlike higher-level APIs, Vulkan demands strict control over every aspect of the GPU. This repository serves as a learning workspace where code structure and abstractions will actively evolve as new topics are introduced, and older components are refactored for better performance and architectural integrity.
+
+## Project Scope
+
+**What you can expect to find here:**
+- Vulkan initialization (Instance, Validation Layers, Physical/Logical Device selection).
+- Swap chain lifecycle management (Recreation on window resize, surface capabilities, image views).
+- Graphics pipeline architecture (Fixed-function state manipulation, render passes, and attachments).
+- Low-level execution (Command buffers, queues, and strict synchronization primitives).
+- Shader integration (GLSL compiled to SPIR-V byte-code).
+
+**Non-goals (for now):**
+- Providing a stable, production-ready Engine API.
+- Cross-platform build systems (Currently optimized for Windows/Visual Studio).
+- Long-term backward compatibility between commits.
+
+---
+
+## Build Instructions (Windows / Visual Studio)
 
 ### Prerequisites
-- Vulkan-capable GPU and driver
-- Vulkan SDK installed (includes validation layers and shader compiler tools)
-- Visual Studio (x64 toolchain)
+- A Vulkan-capable GPU with up-to-date drivers.
+- **Vulkan SDK** installed (Required for validation layers and shader compiler tools).
+- **Visual Studio** (x64 toolchain).
 
-### Steps
+### Build Steps
 1. Open `Vulkan.sln` in Visual Studio.
-2. Select `x64` + `Debug` or `Release`.
+2. Select the `x64` architecture and either `Debug` or `Release` mode.
 3. Build and run the startup project.
 
-If the build cannot find Vulkan headers/libraries, verify that the Vulkan SDK is installed correctly and your environment is configured.
+*Note: If the build system cannot find Vulkan headers or libraries, verify that the Vulkan SDK is correctly installed and your environment variables are configured properly.*
 
-## Shader compilation (GLSL -> SPIR-V)
+---
 
-GLSL shaders live under `Shaders/`. Compile them to SPIR-V before running the application.
+## Shader Compilation (GLSL to SPIR-V)
 
-- Use the provided script (`compile.bat`) if you are on Windows.
-- Alternatively, use `glslc` from the Vulkan SDK to compile `.vert/.frag` files into `.spv` outputs.
+Vulkan does not consume raw GLSL text files; it requires compiled SPIR-V binaries. All shader source files are located in the `Shaders/` directory.
 
-Keep generated `.spv` files in the location expected by the application at runtime.
+- **Windows Users:** Run the provided `compile.bat` script to automate the build process.
+- **Manual Compilation:** Alternatively, use the `glslc` executable provided by the Vulkan SDK to compile `.vert` and `.frag` files into `.spv` outputs.
 
-## Repository layout (high level)
+Ensure that the generated `.spv` files remain in the location expected by the application runtime.
 
-- `Shaders/`           Shader sources and SPIR-V outputs
-- `lve_*.{hpp,cpp}`    Vulkan wrappers/abstractions used during learning
-- `main.cpp`           Current entry point / demo runner
-- `Vulkan.sln`         Visual Studio solution
+---
 
-## Notes
+## Repository Layout
 
-This repository is intentionally iterative:
-- Commits may contain partial work while a feature is being explored.
-- Refactors are expected as understanding improves.
-- If you are using this as reference, prefer reading the latest commit on `main`.
-
-## References
-
-- Vulkan Specification and official resources: https://www.khronos.org/vulkan/
-- Vulkan SDK (LunarG): https://vulkan.lunarg.com/
-- Vulkan validation layers: https://github.com/KhronosGroup/Vulkan-ValidationLayers
-
-## License
-
-No license file is provided in this repository at the moment.
-If you plan to reuse or redistribute any part of this code, add an explicit license first.
+```text
+.
+├── Shaders/              # GLSL source files and compiled SPIR-V binaries
+├── lve_*.{hpp,cpp}       # Vulkan wrapper classes and core abstractions
+├── main.cpp              # Application entry point and primary demo runner
+└── Vulkan.sln            # Visual Studio solution file
