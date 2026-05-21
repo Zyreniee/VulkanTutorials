@@ -175,6 +175,7 @@ namespace lve {
 
         for (int j = 0; j < 4; j++) {
             SimplePushConstantData push{};
+            push.transform = glm::mat2(1.0f);  // identity matrix
             push.offset = { -0.5f + motion, -0.4f + j * 0.25f };
             push.color = { 0.0f, 0.0f, 0.2f + 0.2f * j };
 

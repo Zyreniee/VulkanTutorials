@@ -1,6 +1,7 @@
 #include "lve_swap_chain.hpp"
 
 // std
+#include <algorithm>
 #include <array>
 #include <cstdlib>
 #include <cstring>
@@ -57,9 +58,11 @@ namespace lve {
 
         // cleanup synchronization objects
         for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
-            vkDestroySemaphore(device.device(), renderFinishedSemaphores[i], nullptr);
             vkDestroySemaphore(device.device(), imageAvailableSemaphores[i], nullptr);
             vkDestroyFence(device.device(), inFlightFences[i], nullptr);
+        }
+        for (size_t i = 0; i < renderFinishedSemaphores.size(); i++) {
+            vkDestroySemaphore(device.device(), renderFinishedSemaphores[i], nullptr);
         }
     }
 
@@ -101,7 +104,7 @@ namespace lve {
         submitInfo.commandBufferCount = 1;
         submitInfo.pCommandBuffers = buffers;
 
-        VkSemaphore signalSemaphores[] = { renderFinishedSemaphores[currentFrame] };
+        VkSemaphore signalSemaphores[] = { renderFinishedSemaphores[*imageIndex] };
         submitInfo.signalSemaphoreCount = 1;
         submitInfo.pSignalSemaphores = signalSemaphores;
 
@@ -346,8 +349,16 @@ namespace lve {
     }
 
     void LveSwapChain::createSyncObjects() {
+        // imageAvailable: one per frame-in-flight, indexed by currentFrame.
+        // The fence wait at the top of acquireNextImage guarantees the previous
+        // submit that consumed this semaphore has completed, so it's safe to reuse.
         imageAvailableSemaphores.resize(MAX_FRAMES_IN_FLIGHT);
-        renderFinishedSemaphores.resize(MAX_FRAMES_IN_FLIGHT);
+
+        // renderFinished: one per swapchain image, indexed by imageIndex.
+        // The presentation engine holds a reference until the image is re-acquired,
+        // so we need one per image to avoid reuse while still in use by present.
+        renderFinishedSemaphores.resize(imageCount());
+
         inFlightFences.resize(MAX_FRAMES_IN_FLIGHT);
         imagesInFlight.resize(imageCount(), VK_NULL_HANDLE);
 
@@ -361,10 +372,14 @@ namespace lve {
         for (size_t i = 0; i < MAX_FRAMES_IN_FLIGHT; i++) {
             if (vkCreateSemaphore(device.device(), &semaphoreInfo, nullptr, &imageAvailableSemaphores[i]) !=
                 VK_SUCCESS ||
-                vkCreateSemaphore(device.device(), &semaphoreInfo, nullptr, &renderFinishedSemaphores[i]) !=
-                VK_SUCCESS ||
                 vkCreateFence(device.device(), &fenceInfo, nullptr, &inFlightFences[i]) != VK_SUCCESS) {
                 throw std::runtime_error("failed to create synchronization objects for a frame!");
+            }
+        }
+        for (size_t i = 0; i < imageCount(); i++) {
+            if (vkCreateSemaphore(device.device(), &semaphoreInfo, nullptr, &renderFinishedSemaphores[i]) !=
+                VK_SUCCESS) {
+                throw std::runtime_error("failed to create render finished semaphore!");
             }
         }
     }
