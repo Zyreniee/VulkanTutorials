@@ -1,5 +1,8 @@
 #include "first_app.hpp"
 
+#include <cmath>
+#include <glm/ext/matrix_float2x2.hpp>
+
 // libs
 #define GLM_FORCE_RADIANS
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
@@ -13,6 +16,7 @@
 namespace lve {
 
     struct SimplePushConstantData {
+        glm::mat2 transform{1.f};
         glm::vec2 offset;
         alignas(16) glm::vec3 color;
     };
@@ -123,8 +127,14 @@ namespace lve {
     }
 
     void FirstApp::recordCommandBuffer(int imageIndex) {
-        static int frame = 30;
-        frame = (frame + 1) % 200;
+        const float speed = 0.3f; // units per second
+        const float travelDistance = 1.5f;
+        auto currentTime = std::chrono::steady_clock::now();
+        float elapsedSeconds = std::chrono::duration<float>(currentTime - startTime).count();
+        float motion = std::fmod(elapsedSeconds * speed, travelDistance);
+        if (motion < 0.0f) {
+            motion += travelDistance;
+        }
 
         VkCommandBufferBeginInfo beginInfo{};
         beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
@@ -165,7 +175,7 @@ namespace lve {
 
         for (int j = 0; j < 4; j++) {
             SimplePushConstantData push{};
-            push.offset = { -0.5f + frame * 0.01f, -0.4f + j * 0.25f };
+            push.offset = { -0.5f + motion, -0.4f + j * 0.25f };
             push.color = { 0.0f, 0.0f, 0.2f + 0.2f * j };
 
             vkCmdPushConstants(

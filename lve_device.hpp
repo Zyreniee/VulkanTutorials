@@ -24,7 +24,7 @@ namespace lve {
 
     class LveDevice {
     public:
-#ifdef NDEBUG
+#if defined(NDEBUG) && !defined(ENABLE_VALIDATION_LAYERS)
         const bool enableValidationLayers = false;
 #else
         const bool enableValidationLayers = true;

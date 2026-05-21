@@ -1,2 +1,27 @@
+# Build output
+build/
+
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
 *.ipch
 *.IPCH
+x64/
+
+# Windows-specific build artifacts
+*.exe
+*.obj
+*.pdb
+*.ilk
+
+# macOS
+.DS_Store
+
+# Compiled shaders (keep source .vert/.frag, recompile .spv locally)
+# Shaders/*.spv
+
+# Editor
+.cache/

@@ -7,6 +7,7 @@
 #include "lve_window.hpp"
 
 // std
+#include <chrono>
 #include <memory>
 #include <vector>
 
@@ -41,5 +42,6 @@ namespace lve {
 		VkPipelineLayout pipelineLayout;
 		std::vector<VkCommandBuffer> commandBuffers;
 		std::unique_ptr<LveModel> lveModel;
+		std::chrono::steady_clock::time_point startTime{ std::chrono::steady_clock::now() };
 	};
 }  // namespace lve
