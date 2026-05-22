@@ -1,65 +1,20 @@
 #include "lve_renderer.hpp"
-#include "first_app.hpp"
+#include "lve_window.hpp"
 
 // std
 #include <array>
 #include <cassert>
+#include <cstddef>
 #include <stdexcept>
 
 namespace lve {
 
-LveRenderer::LveRenderer() {
-  loadGameObjects();
-  createPipelineLayout();
+LveRenderer::LveRenderer(LveWindow &window, LveDevice &device) : lveWindow{window}, lveDevice{device} {
   recreateSwapChain();
   createCommandBuffers();
 }
 
-LveRenderer::~LveRenderer() { vkDestroyPipelineLayout(lveDevice.device(), pipelineLayout, nullptr); }
-
-void LveRenderer::run() {
-  while (!lveWindow.shouldClose()) {
-    glfwPollEvents();
-    drawFrame();
-  }
-
-  vkDeviceWaitIdle(lveDevice.device());
-}
-
-void LveRenderer::loadGameObjects() {
-  std::vector<LveModel::Vertex> vertices{
-      {{0.0f, -0.5f}, {1.0f, 0.0f, 0.0f}},
-      {{0.5f, 0.5f}, {0.0f, 1.0f, 0.0f}},
-      {{-0.5f, 0.5f}, {0.0f, 0.0f, 1.0f}}};
-  auto lveModel = std::make_shared<LveModel>(lveDevice, vertices);
-
-  auto triangle = LveGameObject::createGameObject();
-  triangle.model = lveModel;
-  triangle.color = {.1f, .8f, .1f};
-  triangle.transform2d.translation.x = .2f;
-  triangle.transform2d.scale = {2.f, .5f};
-  triangle.transform2d.rotation = .25f * glm::two_pi<float>();
-
-  gameObjects.push_back(std::move(triangle));
-}
-
-void FirstApp::createPipelineLayout() {
-  VkPushConstantRange pushConstantRange{};
-  pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT;
-  pushConstantRange.offset = 0;
-  pushConstantRange.size = sizeof(SimplePushConstantData);
-
-  VkPipelineLayoutCreateInfo pipelineLayoutInfo{};
-  pipelineLayoutInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
-  pipelineLayoutInfo.setLayoutCount = 0;
-  pipelineLayoutInfo.pSetLayouts = nullptr;
-  pipelineLayoutInfo.pushConstantRangeCount = 1;
-  pipelineLayoutInfo.pPushConstantRanges = &pushConstantRange;
-  if (vkCreatePipelineLayout(lveDevice.device(), &pipelineLayoutInfo, nullptr, &pipelineLayout) !=
-      VK_SUCCESS) {
-    throw std::runtime_error("failed to create pipeline layout!");
-  }
-}
+LveRenderer::~LveRenderer() { freeCommandBuffers(); }
 
 void FirstApp::recreateSwapChain() {
   auto extent = lveWindow.getExtent();
@@ -78,23 +33,7 @@ void FirstApp::recreateSwapChain() {
       createCommandBuffers();
     }
   }
-
-  createPipeline();
-}
-
-void FirstApp::createPipeline() {
-  assert(lveSwapChain != nullptr && "Cannot create pipeline before swap chain");
-  assert(pipelineLayout != nullptr && "Cannot create pipeline before pipeline layout");
-
-  PipelineConfigInfo pipelineConfig{};
-  LvePipeline::defaultPipelineConfigInfo(pipelineConfig);
-  pipelineConfig.renderPass = lveSwapChain->getRenderPass();
-  pipelineConfig.pipelineLayout = pipelineLayout;
-  lvePipeline = std::make_unique<LvePipeline>(
-      lveDevice,
-      "shaders/simple_shader.vert.spv",
-      "shaders/simple_shader.frag.spv",
-      pipelineConfig);
+//we'll come back to this in just a moment
 }
 
 void FirstApp::createCommandBuffers() {
@@ -121,18 +60,57 @@ void FirstApp::freeCommandBuffers() {
   commandBuffers.clear();
 }
 
-void FirstApp::recordCommandBuffer(int imageIndex, float deltaTime) {
-  VkCommandBufferBeginInfo beginInfo{};
-  beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+ VkCommandBuffer LveRenderer::beginFrame(){
+    assert(!isFrameStarted && "Cannot call beginFrame while already in progress");
 
-  if (vkBeginCommandBuffer(commandBuffers[imageIndex], &beginInfo) != VK_SUCCESS) {
-    throw std::runtime_error("failed to begin recording command buffer!");
+  auto result = lveSwapChain->acquireNextImage(&currentImageIndex);
+  if (result == VK_ERROR_OUT_OF_DATE_KHR) {
+    recreateSwapChain();
+    return nullptr;
   }
 
-  VkRenderPassBeginInfo renderPassInfo{};
+  if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR) {
+    throw std::runtime_error("failed to acquire swap chain image!");
+  }
+
+    isFrameStarted = true;
+
+    auto commandBuffer = getCurrentCommandBuffer();
+      VkCommandBufferBeginInfo beginInfo{};
+  beginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+
+  if (vkBeginCommandBuffer(commandBuffer, &beginInfo) != VK_SUCCESS) {
+    throw std::runtime_error("failed to begin recording command buffer!");
+  }
+  return commandBuffer;
+ }
+    void LveRenderer::endFrame(){
+        assert(isFrameStarted && "Can't call endFrame while frame is not in progress");
+        auto commandBuffer = getCurrentCommandBuffer();
+          if (vkEndCommandBuffer(commandBuffer) != VK_SUCCESS) {
+    throw std::runtime_error("failed to record command buffer!");
+  }
+
+  auto result = lveSwapChain->submitCommandBuffers(&commandBuffer, &currentImageIndex);
+  if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR ||
+      lveWindow.wasWindowResized()) {
+    lveWindow.resetWindowResizedFlag();
+    recreateSwapChain();
+  } else if (result != VK_SUCCESS) {
+    throw std::runtime_error("failed to present swap chain image!");
+  }
+isFrameStarted = false;
+    }
+    void LveRenderer::beginSwapChainRenderPass(VkCommandBuffer commandBuffer){
+        assert(isFrameStarted && "Can't call beginSwapChainRenderPass if frame is not in progress");
+        assert(commandBuffer == getCurrentCommandBuffer() &&
+         "Can't begin render pass on command buffer from a different frame");
+
+
+           VkRenderPassBeginInfo renderPassInfo{};
   renderPassInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
   renderPassInfo.renderPass = lveSwapChain->getRenderPass();
-  renderPassInfo.framebuffer = lveSwapChain->getFrameBuffer(imageIndex);
+  renderPassInfo.framebuffer = lveSwapChain->getFrameBuffer(currentImageIndex);
 
   renderPassInfo.renderArea.offset = {0, 0};
   renderPassInfo.renderArea.extent = lveSwapChain->getSwapChainExtent();
@@ -143,7 +121,7 @@ void FirstApp::recordCommandBuffer(int imageIndex, float deltaTime) {
   renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());
   renderPassInfo.pClearValues = clearValues.data();
 
-  vkCmdBeginRenderPass(commandBuffers[imageIndex], &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
+  vkCmdBeginRenderPass(commandBuffer[currentImageIndex], &renderPassInfo, VK_SUBPASS_CONTENTS_INLINE);
 
   VkViewport viewport{};
   viewport.x = 0.0f;
@@ -153,69 +131,17 @@ void FirstApp::recordCommandBuffer(int imageIndex, float deltaTime) {
   viewport.minDepth = 0.0f;
   viewport.maxDepth = 1.0f;
   VkRect2D scissor{{0, 0}, lveSwapChain->getSwapChainExtent()};
-  vkCmdSetViewport(commandBuffers[imageIndex], 0, 1, &viewport);
-  vkCmdSetScissor(commandBuffers[imageIndex], 0, 1, &scissor);
+  vkCmdSetViewport(commandBuffer[currentImageIndex], 0, 1, &viewport);
+  vkCmdSetScissor(commandBuffer[currentImageIndex], 0, 1, &scissor);
 
-  renderGameObjects(commandBuffers[imageIndex], deltaTime);
+    }
+    void LveRenderer::endSwapChainRenderPass(VkCommandBuffer commandBuffer){
+             assert(isFrameStarted && "Can't call endSwapChainRenderPass if frame is not in progress");
+        assert(commandBuffer == getCurrentCommandBuffer() &&
+         "Can't end render pass on command buffer from a different frame");
+           vkCmdEndRenderPass(commandBuffer[currentImageIndex]);
 
-  vkCmdEndRenderPass(commandBuffers[imageIndex]);
-  if (vkEndCommandBuffer(commandBuffers[imageIndex]) != VK_SUCCESS) {
-    throw std::runtime_error("failed to record command buffer!");
-  }
-}
-
-void FirstApp::renderGameObjects(VkCommandBuffer commandBuffer, float deltaTime) {
-  lvePipeline->bind(commandBuffer);
-
-  const float angularSpeed = glm::two_pi<float>() * 0.1f; // one full turn in 10 seconds
-  for (auto& obj : gameObjects) {
-    obj.transform2d.rotation = glm::mod(obj.transform2d.rotation + angularSpeed * deltaTime,
-                                       glm::two_pi<float>());
-
-    SimplePushConstantData push{};
-    push.offset = obj.transform2d.translation;
-    push.color = obj.color;
-    push.transform = obj.transform2d.mat2();
-
-    vkCmdPushConstants(
-        commandBuffer,
-        pipelineLayout,
-        VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT,
-        0,
-        sizeof(SimplePushConstantData),
-        &push);
-    obj.model->bind(commandBuffer);
-    obj.model->draw(commandBuffer);
-  }
-}
-
-void FirstApp::drawFrame() {
-  auto currentTime = std::chrono::steady_clock::now();
-  float deltaTime = std::chrono::duration<float>(currentTime - lastFrameTime).count();
-  lastFrameTime = currentTime;
-
-  uint32_t imageIndex;
-  auto result = lveSwapChain->acquireNextImage(&imageIndex);
-
-  if (result == VK_ERROR_OUT_OF_DATE_KHR) {
-    recreateSwapChain();
-    return;
-  }
-
-  if (result != VK_SUCCESS && result != VK_SUBOPTIMAL_KHR) {
-    throw std::runtime_error("failed to acquire swap chain image!");
-  }
-
-  recordCommandBuffer(imageIndex, deltaTime);
-  result = lveSwapChain->submitCommandBuffers(&commandBuffers[imageIndex], &imageIndex);
-  if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR ||
-      lveWindow.wasWindowResized()) {
-    lveWindow.resetWindowResizedFlag();
-    recreateSwapChain();
-    return;
-  } else if (result != VK_SUCCESS) {
-    throw std::runtime_error("failed to present swap chain image!");
-  }
-}
+   
+    }
 
 }  // namespace lve

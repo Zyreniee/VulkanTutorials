@@ -29,8 +29,6 @@ class LveRenderer {
     return commandBuffers[currentImageIndex];
   }
 
-  void run();
-
     VkCommandBuffer beginFrame();
     void endFrame();
     void beginSwapChainRenderPass(VkCommandBuffer commandBuffer);
