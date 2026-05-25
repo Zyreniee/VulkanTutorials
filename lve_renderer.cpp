@@ -2,9 +2,11 @@
 #include "lve_window.hpp"
 
 // std
+#include <algorithm>
 #include <array>
 #include <cassert>
 #include <cstddef>
+#include <future>
 #include <stdexcept>
 
 namespace lve {
@@ -16,7 +18,7 @@ LveRenderer::LveRenderer(LveWindow &window, LveDevice &device) : lveWindow{windo
 
 LveRenderer::~LveRenderer() { freeCommandBuffers(); }
 
-void FirstApp::recreateSwapChain() {
+void LveRenderer::recreateSwapChain() {
   auto extent = lveWindow.getExtent();
   while (extent.width == 0 || extent.height == 0) {
     extent = lveWindow.getExtent();
@@ -27,17 +29,18 @@ void FirstApp::recreateSwapChain() {
   if (lveSwapChain == nullptr) {
     lveSwapChain = std::make_unique<LveSwapChain>(lveDevice, extent);
   } else {
-    lveSwapChain = std::make_unique<LveSwapChain>(lveDevice, extent, std::move(lveSwapChain));
-    if (lveSwapChain->imageCount() != commandBuffers.size()) {
-      freeCommandBuffers();
-      createCommandBuffers();
+    std::shared_ptr<LveSwapChain> oldSwapChain = std::move(lveSwapChain);
+    lveSwapChain = std::make_unique<LveSwapChain>(lveDevice, extent, oldSwapChain);
+
+    if (!oldSwapChain->compareSwapFormats(*lveSwapChain.get())) {
+      throw std::runtime_error("Swap chain image or depth format has changed!");
     }
   }
 //we'll come back to this in just a moment
 }
 
-void FirstApp::createCommandBuffers() {
-  commandBuffers.resize(lveSwapChain->imageCount());
+void LveRenderer::createCommandBuffers() {
+  commandBuffers.resize(LveSwapChain::MAX_FRAMES_IN_FLIGHT);
 
   VkCommandBufferAllocateInfo allocInfo{};
   allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
@@ -51,7 +54,7 @@ void FirstApp::createCommandBuffers() {
   }
 }
 
-void FirstApp::freeCommandBuffers() {
+void LveRenderer::freeCommandBuffers() {
   vkFreeCommandBuffers(
       lveDevice.device(),
       lveDevice.getCommandPool(),
@@ -100,6 +103,9 @@ void FirstApp::freeCommandBuffers() {
     throw std::runtime_error("failed to present swap chain image!");
   }
 isFrameStarted = false;
+currentFrameIndex = (currentFrameIndex + 1) % LveSwapChain::MAX_FRAMES_IN_FLIGHT;
+
+
     }
     void LveRenderer::beginSwapChainRenderPass(VkCommandBuffer commandBuffer){
         assert(isFrameStarted && "Can't call beginSwapChainRenderPass if frame is not in progress");
