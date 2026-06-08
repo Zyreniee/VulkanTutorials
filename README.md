@@ -68,7 +68,7 @@ Ensure that the generated `.spv` files remain in the location expected by the ap
 
 ```text
 .
-├── Shaders/              # GLSL source files and compiled SPIR-V binaries
-├── lve_*.{hpp,cpp}       # Vulkan wrapper classes and core abstractions
-├── main.cpp              # Application entry point and primary demo runner
-└── Vulkan.sln            # Visual Studio solution file
+├── Shaders/              #GLSL source files and compiled SPIR-V binaries
+├── lve_*.{hpp,cpp}       #Vulkan wrapper classes and core abstractions
+├── main.cpp              #Application entry point and primary demo runner
+└── Vulkan.sln            #Visual Studio solution file
